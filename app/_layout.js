@@ -1,5 +1,7 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from 'expo-router';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+
 
 export default function TabLayout() {
   return (
@@ -9,13 +11,35 @@ export default function TabLayout() {
         options={{
           title: 'Home',
           tabBarIcon: ({ color }) => <FontAwesome size={28} name="home" color={color} />,
+          headerShown: false,
         }}
       />
       <Tabs.Screen
         name="revFrancesa"
         options={{
           title: 'Revolução',
-          tabBarIcon: ({ color }) => <FontAwesome size={28} name="cog" color={color} />,
+          tabBarIcon: ({ color }) => <FontAwesome size={28} name="flag" color={color} />,
+          headerShown: false,
+        }}
+        />
+        <Tabs.Screen
+        name="motorVapor"
+        options={{
+          title: 'Vapor',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons size={28} name="fire" color={color} />
+          ),
+          headerShown: false,
+        }}
+      />
+      <Tabs.Screen
+        name="motorCombustão"
+        options={{
+          title: 'Combustão',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons size={28} name="engine" color={color} />
+          ),
+          headerShown: false,
         }}
       />
     </Tabs>
