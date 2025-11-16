@@ -1,3 +1,4 @@
+// app/(tabs)/_layout.js (Arquivo que você enviou, com linhas removidas)
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from 'expo-router';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
@@ -22,7 +23,7 @@ export default function TabLayout() {
           headerShown: false,
         }}
         />
-        <Tabs.Screen
+      <Tabs.Screen
         name="motorVapor"
         options={{
           title: 'Vapor',
@@ -39,6 +40,20 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons size={28} name="engine" color={color} />
           ),
+          headerShown: false,
+        }}
+      />
+      <Tabs.Screen
+        name="motor2T"
+        options={{
+          href: null,
+          headerShown: false,
+        }}
+      />
+      <Tabs.Screen
+        name="motor4T"
+        options={{
+          href: null,
           headerShown: false,
         }}
       />
