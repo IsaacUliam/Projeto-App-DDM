@@ -9,44 +9,42 @@ export default function App() {
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Text>Revolução e Inovação</Text>
-        <Text>Revolução Francesa</Text>
+        <Text style={styles.titulo}>Revolução Francesa</Text>
         <Text></Text>
           <Text style={styles.textos}>
             A Revolução Francesa foi um dos acontecimentos mais marcantes da
-            história mundial. Iniciada em 1789, Ela representou a insatisfação
+            história mundial. <Text style={{fontWeight: "bold"}}>Iniciada em 1789,</Text> Ela representou a insatisfação
             do povo francês com as desigualdades sociais, os altos impostos e o
-            poder concentrado nas mãos da nobreza e do clero. Inspirados pelos
+            poder concentrado nas mãos da nobreza e do clero. {'\n'}Inspirados pelos
             ideais de liberdade, igualdade e fraternidade, os revolucionários
-            buscaram derrubar o Antigo Regime e construir uma sociedade mais
-            justa, baseada na soberania popular e nos direitos humanos.
+            buscaram derrubar o <Text style={{fontWeight: "bold"}}>Antigo Regime e construir uma sociedade mais
+            justa,</Text> baseada na soberania popular e nos direitos humanos.
           </Text>
           <Text></Text>
           <Image source={img1} style={styles.imagem} />
         <Text></Text>
-        <Text>
+        <Text style={styles.textos}>
           Durante esse período, a França passou por profundas transformações
-          políticas, sociais e econômicas. A queda da Bastilha simbolizou o
-          início do fim do absolutismo, e documentos como a Declaração dos
-          Direitos do Homem e do Cidadão trouxeram novos princípios que
+          políticas, sociais e econômicas. <Text>A queda da Bastilha simbolizou o
+          início do fim do absolutismo,</Text> e documentos como a <Text>Declaração dos
+          Direitos do Homem e do Cidadão</Text> trouxeram novos princípios que
           influenciaram o mundo todo. A Revolução também abriu espaço para o
           surgimento de novas formas de governo, o fortalecimento da burguesia e
-          o avanço das ideias iluministas.
+          o avanço das <Text>ideias iluministas.</Text>
         </Text>
         <Text></Text>
         <Image source={img2} style={styles.imagem} />
         <Text></Text>
-        <Text>
+        <Text style={styles.textos}>
           O fim do Antigo Regime na França, com o estabelecimento de uma
-          República (mesmo que instável e sujeita a radicalismos, como o Período
-          do Terror), teve um efeito dominó na Europa. Reis e nobres por todo o
+          República, teve um efeito dominó na Europa. Reis e nobres por todo o
           continente temeram a propagação desses ideais de soberania popular e
           tentaram reprimir os movimentos liberais.
         </Text>
         <Text></Text>
         <Image source={img3} style={styles.imagem} />
         <Text></Text>
-        <Text>
+        <Text style={styles.textos}>
           Enquanto a França passava por sua revolução política e social, a
           vizinha Inglaterra já vivia um intenso processo de transformação
           econômica, a Revolução Industrial. As mudanças políticas na França e a
@@ -74,16 +72,33 @@ const styles = StyleSheet.create({
   },
 
   imagem: {
-    width: 256,
-    height: 192,
+    width: 320,
+    height: 220,
+    margin: 15,
     resizeMode: "cover",
     borderWidth: 3,
-    borderColor: "black",
+    borderColor: "#333",
     borderRadius: 10,
   },
 
   textos: {
-    fontFamily: "arial",
-    fontSize: 11,
+    fontSize: 16,        
+    marginLeft: 20,
+    marginRight: 20,
+    lineHeight: 20,   
+    color: "black",      
+    backgroundColor: "#3333",
+    borderRadius: 8,   
+    padding: 10,      
+    shadowColor: "#000",  
   },
+
+  titulo: {
+    fontSize: 26,
+    fontWeight: "bold",
+    marginTop: 25,
+    marginBottom: 5,
+    color: "darkred",
+  }
+
 });
