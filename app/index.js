@@ -7,8 +7,8 @@ export default function App() {
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Text>Revolução e Inovação</Text>
-        <Image source={logo} style={styles.img}/>
+        <Text style={styles.titulo}>Revolução e Inovação</Text>
+        <Image source={logo} style={styles.img} />
         <Text style={styles.textos}>Nas ruas de Paris, o fogo da revolta acendeu ideias que ecoariam por séculos.
           Enquanto multidões lutavam por liberdade, em oficinas e laboratórios uma nova chama surgia — discreta, mas capaz de mudar o rumo do progresso.
           O mesmo espírito que derrubou reis e ergueu nações também despertou a força que colocaria o mundo em movimento.</Text>
@@ -21,25 +21,41 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#f2f2f2",
+    paddingVertical: 30,
     alignItems: "center",
-    justifyContent: "center",
+  },
+
+  titulo: {
+    fontSize: 30,
+    fontWeight: '900',
+    marginTop: 30,
+    marginBottom: 10,
+    color: '#8B0000',
+    textShadowColor: 'rgba(0,0,0,0.2)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2
   },
 
   img: {
-    width: 256,
-    height: 256,
+    width: 220,
+    height: 220,
+    marginBottom: 20,
   },
 
   textos: {
-    fontSize: 16,        
-    marginLeft: 20,
-    marginRight: 20,
-    lineHeight: 20,   
-    color: "black",      
-    backgroundColor: "#3333",
-    borderRadius: 8,   
-    padding: 10,      
-    shadowColor: "#000",  
+    width: "90%",
+    fontSize: 17,
+    lineHeight: 24,
+    color: "#222",
+    backgroundColor: "#fff",
+    padding: 15,
+    borderRadius: 12,
+    marginBottom: 30,
+   backgroundColor: "#2222",
+    borderRadius: 8,
+    padding: 10,
+    shadowColor: "#000",
+    boxShadow: "0px 10px 14px #444",
   },
 });
