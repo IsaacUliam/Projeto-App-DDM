@@ -3,160 +3,131 @@ import { useRouter } from 'expo-router';
 import motor01 from "../assets/motor4t01.png";
 import motorV2 from "../assets/motor-V2-4-tempos.gif";
 import motorGif from "../assets/motor-monocilindro-4-tempos.gif";
-import motor4Cilindros from "../assets/motor-4-cilindros-4-tempos.gif"
+import motor4Cilindros from "../assets/motor-4-cilindros-4-tempos.gif";
 import motorTempo1 from "../assets/t1-4.png";
 import motorTempo2 from "../assets/t2-4.png";
 import motorTempo3 from "../assets/t3-4.png";
 import motorTempo4 from "../assets/t4-4.png";
 
-
-export default function Motor2T() {
+export default function Motor4T() {
 
   const router = useRouter();
 
   return (
     <View style={styles.container}>
-      <View style={{ padding: 20 }}>
-        <Pressable onPress={() => router.back()}>
-          <Text style={{ fontSize: 20, marginBottom: 20 }}>← Voltar</Text>
+      <ScrollView contentContainerStyle={styles.scrollContent}>
+
+        <Pressable onPress={() => router.back()} style={styles.voltar}>
+          <Text style={styles.voltarTexto}>Voltar</Text>
         </Pressable>
-      </View>
-      <ScrollView>
 
+        <Text style={styles.titulo}>Motor 4 Tempos</Text>
 
-        <Text>Motor 4 Tempos</Text>
-        <Text>
+        <Text style={styles.texto}>
           Os motores 4 tempos são conhecidos pelo funcionamento mais suave e eficiente.
-          <Image source={motor01} style={styles.img} />{'\n'}Eles completam o ciclo de combustão em quatro etapas bem definidas, o que os torna mais econômicos, duráveis e menos poluentes. São comuns na maioria das motos modernas, carros e máquinas que precisam de desempenho estável e confiável.
-          <Image source={motorV2} style={{ width: 300, height: 200, resizeMode: "contain" }} />
         </Text>
-        <View>
-          <Text style={{ fontWeight: "bold" }}>Como funciona</Text>
-          <Text>
-            O motor 4 tempos realiza o ciclo completo em quatro etapas do movimento do pistão: admissão, compressão, combustão e escape.
-            Por funcionar dessa forma, ele entrega uma queima mais controlada, consome menos combustível e produz menos fumaça, além de ter explosão a cada duas voltas do virabrequim.{"\n\n"}
+
+        <Image source={motor01} style={styles.img} />
+
+        <Text style={styles.texto}>
+          Eles completam o ciclo de combustão em quatro etapas bem definidas, o que os torna mais econômicos, duráveis e menos poluentes. São comuns na maioria das motos modernas, carros e máquinas que precisam de desempenho estável e confiável.
+        </Text>
+
+        <Image source={motorV2} style={styles.gifWide} />
+
+        <View style={styles.bloco}>
+          <Text style={styles.subtitulo}>Como funciona</Text>
+
+          <Text style={styles.texto}>
+            O motor 4 tempos realiza o ciclo completo em quatro etapas: admissão, compressão, combustão e escape.
           </Text>
-          <View>
-            <Text style={{ fontWeight: "bold", }}>1°T Admissão (Entrada de ar e combustível):{"\n"}</Text>
-            <Text>
-              • O pistão desce.
-              {'\n'}
-              • A válvula de admissão se abre.
-              {'\n'}
-              • A mistura de ar + combustível entra no cilindro, puxada pelo movimento do pistão.
-              {'\n'}
-              <Image source={motorTempo1} />
-            </Text>
 
-          </View>
-          <View>
-            <Text style={{ fontWeight: "bold", }}>2°T Compressão (Mistura é comprimida){"\n"}</Text>
-            <Text>
-              • O pistão sobe.
-              {'\n'}
-              • Todas as válvulas ficam fechadas.
-              {'\n'}
-              • A mistura é comprimida, ficando mais densa e pronta para explodir.
-              {'\n'}
-              <Image source={motorTempo2} />
-            </Text>
-          </View>
-          <View>
-            <Text style={{ fontWeight: "bold", }}>3°T Combustão / Explosão{"\n"}</Text>
-            <Text>
-              • A vela solta uma faísca.
-              {'\n'}
-              • A mistura comprimida explode.
-              {'\n'}
-              • A explosão empurra o pistão para baixo com força, gerando a potência do motor.
-              {'\n'}
-              <Image source={motorTempo3} />
-            </Text>
-          </View>
-          <View>
-            <Text style={{ fontWeight: "bold", }}>4°T Exaustão / Escape (Saída dos gases queimados){"\n"}</Text>
-            <Text>
-              • O pistão sobe novamente.
-              {'\n'}
-              • A válvula de escape se abre.
-              {'\n'}
-              • Os gases queimados saem pelo escapamento, deixando o cilindro limpo para começar tudo de novo.
-              {'\n'}
-              <Image source={motorTempo4} />
-            </Text>
-          </View>
-          <View>
-            <Text>Funcionamento em um Gif</Text>
-            <Text>
-              O motor 4 tempos transfere o movimento de forma semelhante ao 2 tempos: o pistão sobe e desce e a biela transforma esse movimento em rotação no virabrequim.{'\n'}
-              A diferença é que o 4T realiza esse ciclo em quatro etapas — admissão, compressão, combustão e exaustão o que deixa o funcionamento mais estável e eficiente.
-            </Text>
-            <Image source={motorGif} />
-          </View>
-          <View>
-            <Text>
-              O motor 4 tempos é o tipo de motor mais usado no mundo, presente na maioria das motos, carros e máquinas. Ele existe em vários formatos, cada um com suas características:{'\n'}
-            </Text>
+          {/* TEMPO 1 */}
+          <Text style={styles.subtitulo}>1° Tempo – Admissão</Text>
+          <Text style={styles.texto}>
+            • O pistão desce.{'\n'}
+            • A válvula de admissão se abre.{'\n'}
+            • A mistura de ar + combustível entra no cilindro.
+          </Text>
+          <Image source={motorTempo1} style={styles.img2} />
 
-            <Text>
-              • Motores em linha: cilindros enfileirados; simples, compactos e fáceis de manter.{'\n'}
-            </Text>
-            <Text>
-              • Motores em V: cilindros formando um “V”; oferecem mais torque, suavidade e boa potência ocupando pouco espaço.{'\n'}
-            </Text>
-            <Text>
-              • Motores boxer: cilindros opostos a 180°; usados em Subaru e no Fusca; vibram menos e têm centro de gravidade mais baixo.{'\n'}
-            </Text>
-            <Text>
-              • Motores em W: usados em carros de alto desempenho; combinam alta potência com tamanho compacto.{'\n'}
-            </Text>
-            <Text>
-              Graças ao bom equilíbrio entre economia, durabilidade e baixa poluição, o motor 4 tempos se tornou o padrão dos veículos modernos.{'\n'}
-            </Text>
-            <Image source={motor4Cilindros}/>
-          </View>
-          <View>
-            <Text>Vantagens{'\n'}</Text>
-            <Text>
-              • Mais econômico: consome menos combustível que um 2T.{'\n'}
-            </Text>
-            <Text>
-              • Mais limpo: emite bem menos fumaça e poluentes.{'\n'}
-            </Text>
-            <Text>
-              • Mais durável: possui lubrificação separada, reduzindo desgaste interno.{'\n'}
-            </Text>
-            <Text>
-              • Funcionamento suave: vibra menos e mantém rotação mais estável.{'\n'}
-            </Text>
-            <Text>
-              • Ideal para uso contínuo: ótimo para motos, carros e máquinas que trabalham por horas.{'\n'}
-            </Text>
-          </View>
+          {/* TEMPO 2 */}
+          <Text style={styles.subtitulo}>2° Tempo – Compressão</Text>
+          <Text style={styles.texto}>
+            • O pistão sobe.{'\n'}
+            • Todas as válvulas fecham.{'\n'}
+            • A mistura é comprimida.
+          </Text>
+          <Image source={motorTempo2} style={styles.img2} />
 
-          <Text>{'\n'}</Text>
+          {/* TEMPO 3 */}
+          <Text style={styles.subtitulo}>3° Tempo – Explosão</Text>
+          <Text style={styles.texto}>
+            • A vela solta uma faísca.{'\n'}
+            • A mistura explode.{'\n'}
+            • O pistão é empurrado para baixo.
+          </Text>
+          <Image source={motorTempo3} style={styles.img2} />
 
-          <View>
-            <Text>Desvantagens{'\n'}</Text>
-            <Text>
-              • Mais pesado: possui mais peças internas (válvulas, comando, etc.).{'\n'}
-            </Text>
-            <Text>
-              • Construção mais complexa: manutenção pode ser mais cara. {'\n'}
-            </Text>
-            <Text>
-              • Potência por cilindrada menor: gera explosão a cada duas voltas do virabrequim.{'\n'}
-            </Text>
-            <Text>
-              • Resposta mais lenta: aceleração não é tão imediata quanto a de um 2T.{'\n'}
-            </Text>
-            <Text>
-              • Ocupa mais espaço: motores 4T são maiores pelo número de componentes.{'\n'}
-            </Text>
-          </View>
+          {/* TEMPO 4 */}
+          <Text style={styles.subtitulo}>4° Tempo – Escape</Text>
+          <Text style={styles.texto}>
+            • O pistão sobe.{'\n'}
+            • A válvula de escape abre.{'\n'}
+            • Os gases queimados são expulsos.
+          </Text>
+          <Image source={motorTempo4} style={styles.img2} />
         </View>
 
+        {/* GIF */}
+        <Text style={styles.subtitulo}>Funcionamento em um GIF</Text>
+        <Image source={motorGif} style={styles.gif} />
+
+
+
+        <View style={styles.lista}>
+          <Text style={styles.subtitulo2}>
+            O motor 4 tempos é o tipo mais usado no mundo. Ele pode existir em vários formatos:
+          </Text>
+          <Text style={styles.listaTexto}>
+            • Motores em linha — simples e compactos.{'\n'}
+            • Motores em V — mais torque e suavidade.{'\n'}
+            • Motores boxer — cilindros opostos, vibração baixa.{'\n'}
+            • Motores em W — usados em carros muito potentes.
+          </Text>
+        </View>
+
+        <Text style={styles.subtitulo3}>Motor 4 cilindros em Linha</Text>
+
+        <Image source={motor4Cilindros} style={styles.gifWide} />
+
+        <View style={styles.lista}>
+          <Text style={styles.subtitulo}>Vantagens</Text>
+
+          <Text style={styles.listaTexto}>
+            • Mais econômico.{'\n'}
+            • Menos poluente.{'\n'}
+            • Mais durável.{'\n'}
+            • Funcionamento suave.{'\n'}
+            • Ideal para uso contínuo.
+          </Text>
+        </View>
+
+        <View style={styles.lista}>
+          <Text style={styles.subtitulo}>Desvantagens</Text>
+
+          <Text style={styles.listaTexto}>
+            • Mais pesado.{'\n'}
+            • Construção complexa.{'\n'}
+            • Menos potência por cilindrada.{'\n'}
+            • Resposta mais lenta.{'\n'}
+            • Ocupa mais espaço.
+          </Text>
+        </View>
+
+
         <StatusBar style="auto" />
+
       </ScrollView>
     </View >
   );
@@ -165,13 +136,148 @@ export default function Motor2T() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#FAFAFA",
+  },
+
+  scrollContent: {
+    padding: 20,
+  },
+
+  voltarTexto: {
+    fontSize: 20,
+    color: '#fff',
+    fontWeight: '600',
+    paddingVertical: 4,
+    paddingHorizontal: 10,
+    backgroundColor: '#8b0000',
+    borderRadius: 6,
+    marginRight: 230,
+    marginTop: 10,
+    textAlign: 'center',
+  },
+
+  titulo: {
+    fontSize: 34,
+    fontWeight: 'bold',
+    color: '#8B0000',
+    textAlign: 'center',
+    marginBottom: 20,
+    letterSpacing: 1.5,
+    borderBottomWidth: 4,
+    borderBottomColor: '#333333',
+    paddingBottom: 10,
+  },
+
+  subtitulo: {
+    fontSize: 22,
+    fontWeight: "bold",
+    color: "#8b0000",
+    marginTop: 25,
+    marginBottom: 10,
+  },
+
+  subtitulo2: {
+    fontSize: 18,
+    textAlign: "justify",
+    fontWeight: "bold",
+    color: "#8b0000",
+    marginTop: 25,
+    marginBottom: 10,
+  },
+
+  subtitulo3: {
+    fontSize: 22,
+    fontWeight: "bold",
+    color: "#8b0000",
+    marginTop: 25,
+    marginBottom: 10,
+    textAlign: "center",
+  },
+
+  texto: {
+    fontSize: 16,
+    color: "#444",
+    lineHeight: 22,
+    marginBottom: 10,
+    marginTop: 10,
+  },
+
+  lista: {
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    padding: 15,
+    paddingTop: 0,
+    borderRadius: 10,
+    marginVertical: 15,
+    elevation: 2,
+    borderColor: "#333",
+    borderRadius: 10,
+    boxShadow: "0px 10px 14px #444",
+  },
+
+  listaTexto: {
+    fontSize: 16,
+    lineHeight: 24,
+    color: "#444",
   },
 
   img: {
-    width: 256,
+    width: "80%",
     height: 256,
-  }
+    resizeMode: "cover",
+    marginRight: "10%",
+    marginLeft: "10%",
+    margin: 15,
+    borderWidth: 3,
+    borderColor: "#333",
+    borderRadius: 10,
+    boxShadow: "0px 10px 14px #444",
+  },
+
+  img2: {
+    width: "80%",
+    height: 400,
+    resizeMode: "cover",
+    marginVertical: 10,
+    borderRadius: 8,
+    borderWidth: 2,
+    borderColor: '#A9A9A9',
+    alignSelf: 'center',
+  },
+
+  gif: {
+    backgroundColor: "#fff",
+    width: "100%",
+    height: 330,
+    resizeMode: "contain",
+    marginBottom: 20,
+    borderRadius: 8,
+    borderWidth: 3,
+    borderColor: "#333",
+    borderRadius: 10,
+    boxShadow: "0px 10px 14px #444",
+  },
+
+  gifWide: {
+    backgroundColor: "#fff",
+    width: "100%",
+    height: 330,
+    resizeMode: "contain",
+    marginBottom: 20,
+    borderRadius: 8,
+    borderWidth: 3,
+    borderColor: "#333",
+    borderRadius: 10,
+    boxShadow: "0px 10px 14px #444",
+  },
+
+  bloco: {
+    backgroundColor: "#fff",
+    padding: 15,
+    borderRadius: 10,
+    marginVertical: 15,
+    elevation: 2,
+    borderColor: "#333",
+    borderRadius: 10,
+    boxShadow: "0px 10px 14px #444",
+  },
 });

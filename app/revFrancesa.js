@@ -69,7 +69,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#f5f5f5",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     marginRight: "5%",
     lineHeight: 24,
     color: "black",
-    backgroundColor: "#2222",
+    backgroundColor: "#fff",
     borderRadius: 8,
     padding: 10,
     shadowColor: "#000",
@@ -105,14 +105,16 @@ const styles = StyleSheet.create({
   },
 
   titulo: {
-  fontSize: 30,
-  fontWeight: '900',
-  marginTop: 30,
-  marginBottom: 10,
-  color: '#8B0000',
-  textShadowColor: 'rgba(0,0,0,0.2)',
-  textShadowOffset: { width: 1, height: 1 },
-  textShadowRadius: 2
-}
+    fontSize: 34,
+    fontWeight: 'bold',
+    color: '#8B0000',
+    textAlign: 'center',
+    marginBottom: 20,
+    marginTop: 15,
+    letterSpacing: 1.5,
+    borderBottomWidth: 4,
+    borderBottomColor: '#333333',
+    paddingBottom: 10,
+  },
 
 });

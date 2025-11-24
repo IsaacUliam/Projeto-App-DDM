@@ -52,7 +52,6 @@ export default function App() {
           )}
         </View>
 
-
         <View style={{ marginTop: 20 }}>
           <Pressable style={styles.botao} onPress={() => toggle(setMostrarComo)}>
             <Text style={styles.botaoTexto}>
@@ -82,7 +81,6 @@ export default function App() {
           )}
         </View>
 
-
         <View style={{ marginTop: 20 }}>
           <Pressable style={styles.botao} onPress={() => toggle(setMostrarFuturo)}>
             <Text style={styles.botaoTexto}>
@@ -93,17 +91,22 @@ export default function App() {
           {mostrarFuturo && (
             <View style={styles.bloco}>
               <Text style={styles.textoBloco}>
-                Com o avanço da tecnologia, os motores a vapor foram, aos poucos, substituindo a força dos cavalos e permitindo o surgimento dos primeiros trens. {"\n"}
+                Com o avanço da tecnologia, os motores a vapor foram, aos poucos, substituindo a força dos cavalos e permitindo o surgimento dos primeiros trens.
               </Text>
+
               <Image source={trem1} style={styles.imgPequena2} />
-              <Text style={styles.textoBloco}>
-                {"\n"}Durante o século XIX, locomotivas e navios a vapor dominaram o transporte, levando pessoas e cargas a longas distâncias com muito mais velocidade. O vapor representou um grande avanço técnico, mas a partir de 1930 começou a perder espaço para locomotivas e embarcações a diesel e eletricidade, que eram mais rápidas e eficientes.{"\n"}
+
+              <Text style={[styles.textoBloco, { marginTop: 15 }]}>
+                Durante o século XIX, locomotivas e navios a vapor dominaram o transporte, levando pessoas e cargas a longas distâncias com muito mais velocidade. O vapor representou um grande avanço técnico, mas a partir de 1930 começou a perder espaço para locomotivas e embarcações a diesel e eletricidade, que eram mais rápidas e eficientes.
               </Text>
+
               <View style={styles.duasImagens}>
-                <Image source={trem2} style={styles.imagens}/> <Image source={navio} style={styles.imagens}/>
+                <Image source={trem2} style={styles.imagens} />
+                <Image source={navio} style={styles.imagens} />
               </View>
-              <Text style={styles.textoBloco}>
-                {"\n"}  Essa mudança marcou o fim da era do vapor e abriu caminho para os sistemas ferroviários modernos que usamos até hoje.{"\n"}
+
+              <Text style={[styles.textoBloco, { marginTop: 15 }]}>
+                Essa mudança marcou o fim da era do vapor e abriu caminho para os sistemas ferroviários modernos que usamos até hoje.
               </Text>
             </View>
           )}
@@ -118,126 +121,159 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#F5F5F5',
     padding: 20,
-    paddingTop: 40,
+    paddingTop: 50,
   },
 
   duasImagens: {
-    flexDirection: 'column',
-    justifyContent: 'center',
-    
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    flexWrap: 'wrap',
+    marginTop: 15,
   },
 
   imagens: {
-    width: 300, 
-    height: 200,
-    resizeMode: 'cover', 
+    width: '48%',
+    minWidth: 140,
+    height: 120,
+    resizeMode: 'cover',
     alignSelf: 'center',
-    borderWidth: 3,
-    borderColor: '#333',
-    borderRadius: 10,
-    margin: 5,
-},
+    borderRadius: 8,
+    marginVertical: 5,
+    borderWidth: 2,
+    borderColor: '#C0C0C0',
+    elevation: 3,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 3.84,
+  },
 
   titulo: {
-    fontSize: 30,
-    fontWeight: '900',
+    fontSize: 34,
+    fontWeight: 'bold',
     color: '#8B0000',
     textAlign: 'center',
-    marginBottom: 10,
-    textShadowColor: 'rgba(0,0,0,0.15)',
-    textShadowOffset: { width: 1, height: 1 },
-    textShadowRadius: 2,
+    marginBottom: 20,
+    letterSpacing: 1.5,
+    borderBottomWidth: 4,
+    borderBottomColor: '#333333',
+    paddingBottom: 10,
   },
 
   texto: {
     fontSize: 16,
     lineHeight: 24,
     textAlign: 'justify',
-    marginBottom: 15,
-    color: "black",
-    backgroundColor: "#2222",
-    borderRadius: 8,
-    padding: 10,
+    marginBottom: 25,
+    color: '#333333',
+    backgroundColor: '#FFFFFF',
+    borderRadius: 12,
+    padding: 15,
+    borderLeftWidth: 5,
+    borderLeftColor: '#8B0000',
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+    borderRadius: 10,
+    boxShadow: "0px 10px 14px #444",
   },
 
   img: {
-    width: 260,
-    height: 260,
+    width: 200,
+    height: 200,
     alignSelf: 'center',
-    marginBottom: 15,
+    marginBottom: 25,
+    borderRadius: 100,
+    borderWidth: 4,
+    borderColor: '#333333',
+    resizeMode: 'contain',
   },
 
   imgPequena: {
-    width: 300,
-    height: 240,
+    width: '100%',
+    height: 200,
     alignSelf: 'center',
-    marginTop: 10,
-    borderWidth: 3,
-    borderColor: '#333',
-    borderRadius: 10,
-    resizeMode: 'contain',
+    marginTop: 15,
+    borderRadius: 8,
+    borderWidth: 2,
+    borderColor: '#A9A9A9',
+    resizeMode: 'cover',
   },
 
   imgPequena2: {
-    width: 300,
-    height: 200,
+    width: '100%',
+    height: 180,
     alignSelf: 'center',
-    marginTop: 10,
-    borderWidth: 3,
-    borderColor: '#333',
-    borderRadius: 10,
-    resizeMode: 'contain',
+    marginTop: 15,
+    borderRadius: 8,
+    borderWidth: 2,
+    borderColor: '#A9A9A9',
+    resizeMode: 'cover',
   },
 
   imgGif: {
-    width: 300,
+    width: '100%',
     height: 160,
     alignSelf: 'center',
-    borderWidth: 3,
-    borderColor: '#333',
-    borderRadius: 10,
+    borderRadius: 8,
+    borderWidth: 2,
+    borderColor: '#A9A9A9',
+    marginTop: 15,
   },
 
   bloco: {
-    marginTop: 20,
-    padding: 10,
-    backgroundColor: '#2222',
+    marginTop: 10,
+    padding: 15,
+    backgroundColor: '#FFFFFF',
     borderRadius: 12,
     borderWidth: 1,
-    borderColor: '#ddd',
-    shadowColor: "#000",
-    boxShadow: "0px 10px 14px #444",
+    borderColor: '#D3D3D3',
+    elevation: 4,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 5.46,
   },
 
   textoBloco: {
     fontSize: 16,
     lineHeight: 24,
-    color: "black",
+    color: '#333333',
+    textAlign: 'justify',
+    
   },
 
   botao: {
-    paddingVertical: 10,
-
+    paddingVertical: 12,
+    backgroundColor: '#DCDCDC',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#A9A9A9',
+    elevation: 2,
+    
   },
 
   botaoTexto: {
     fontSize: 18,
-    fontWeight: '700',
+    fontWeight: '800',
     textAlign: 'center',
-    color: '#8B0000',
-    borderBottomWidth: 2,
-    borderBottomColor: '#333',
-
+    color: '#4F4F4F',
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
   },
 
   subtitulo: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#000',
-    marginTop: 10,
-    marginBottom: 4,
+    color: '#8B0000',
+    marginTop: 15,
+    marginBottom: 5,
+    borderBottomWidth: 1,
+    borderBottomColor: '#D3D3D3',
+    paddingBottom: 3,
   },
 });
-
