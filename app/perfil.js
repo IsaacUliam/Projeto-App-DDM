@@ -6,14 +6,17 @@ export default function App() {
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <View style={styles.container}>
-        <Text style={styles.titulo}>Revolução e Inovação</Text>
+        <Text style={styles.titulo}>perfil</Text>
         <Image source={logo} style={styles.img} />
-        <Text style={styles.textos}>
-          Nas ruas de Paris, o fogo da revolta acendeu ideias que ecoariam por séculos. Enquanto
-          multidões lutavam por liberdade, em oficinas e laboratórios uma nova chama surgia —
-          discreta, mas capaz de mudar o rumo do progresso. O mesmo espírito que derrubou reis e
-          ergueu nações também despertou a força que colocaria o mundo em movimento.
-        </Text>
+        <View style={{flexDirection: 'row',}}>
+            <Text style={styles.subtituloNegro}>Idade: </Text><Text style={styles.subtitulo}>Isaac Daniel Silva Uliam</Text>
+        </View>
+        <View style={{flexDirection: 'row',}}>
+            <Text style={styles.subtituloNegro}>Nome: </Text><Text style={styles.subtitulo}>Isaac Daniel Silva Uliam</Text>
+        </View>
+        <View style={{flexDirection: 'row',}}>
+            <Text style={styles.subtituloNegro}>Nome: </Text><Text style={styles.subtitulo}>Isaac Daniel Silva Uliam</Text>
+        </View>
         
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Saiba Mais</Text>
@@ -48,6 +51,19 @@ const styles = StyleSheet.create({
     borderBottomWidth: 4,
     borderBottomColor: '#333333',
     paddingBottom: 10,
+  },
+
+  subtitulo: {
+    fontSize: 22,
+    color: "#333",
+    textAlign: 'center',
+  },
+
+  subtituloNegro: {
+    fontSize: 22,
+    color: "#333",
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
 
   img: {

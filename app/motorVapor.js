@@ -191,6 +191,8 @@ const styles = StyleSheet.create({
     borderWidth: 4,
     borderColor: '#333333',
     resizeMode: 'contain',
+    backgroundColor: '#fff',
+
   },
 
   imgPequena: {

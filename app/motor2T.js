@@ -19,13 +19,13 @@ export default function Motor2T() {
       <ScrollView contentContainerStyle={styles.scroll}>
         <Text style={styles.titulo}>Motor 2 Tempos</Text>
 
-        <Text style={styles.texto}>
+        <Text style={styles.texto2}>
           Os motores 2 tempos são conhecidos pela simplicidade e pelo funcionamento rápido.
         </Text>
 
         <Image source={motor01} style={styles.img} />
 
-        <Text style={styles.texto}>
+        <Text style={styles.texto2}>
           Eles completam o ciclo de combustão com menos peças e em menos etapas, o que os torna leves, fortes para o tamanho e fáceis de manter.
         </Text>
 
@@ -64,7 +64,7 @@ export default function Motor2T() {
         </Text>
 
         <View style={styles.bloco}>
-          <Text style={styles.subtitulo}>Vantagens</Text>
+          <Text style={styles.subtitulo3}>Vantagens</Text>
           <Text style={styles.lista}>• Mais simples</Text>
           <Text style={styles.lista}>• Mais leve</Text>
           <Text style={styles.lista}>• Mais potente por cilindrada</Text>
@@ -72,7 +72,7 @@ export default function Motor2T() {
         </View>
 
         <View style={styles.bloco}>
-          <Text style={styles.subtitulo}>Desvantagens</Text>
+          <Text style={styles.subtitulo3}>Desvantagens</Text>
           <Text style={styles.lista}>• Maior consumo de combustível</Text>
           <Text style={styles.lista}>• Polui mais</Text>
           <Text style={styles.lista}>• Menor durabilidade</Text>
@@ -135,12 +135,22 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
 
+  texto2: {
+    fontSize: 18,
+    color: "#000",
+    lineHeight: 24,
+    marginBottom:20,
+    marginTop: 20,
+    textAlign: 'justify',
+  },
+
   subtitulo: {
     fontSize: 22,
     fontWeight: "bold",
     color: "#8b0000",
     marginTop: 25,
-    marginBottom: 10,
+    marginBottom: 20,
+    textAlign: 'center',
   },
 
   subtitulo2: {
@@ -148,6 +158,15 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     color: "#333",
     marginVertical: 10,
+  },
+
+  subtitulo3: {
+    fontSize: 22,
+    fontWeight: "bold",
+    color: "#8b0000",
+    marginTop: 25,
+    marginBottom: 20,
+    textAlign: 'left',
   },
 
   bloco: {

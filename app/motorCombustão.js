@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { Image, ScrollView, StyleSheet, Text, View, Pressable } from "react-native";
 import { useRouter } from 'expo-router';
-import logo from "../assets/motorLogo.png";
+import logo from "../assets/motorLogopng.png";
 import motor2T from "../assets/motor-2T-img.png";
 import motor4T from "../assets/motor-4T-img.png";
 
@@ -75,7 +75,8 @@ const styles = StyleSheet.create({
     borderWidth: 4,
     borderColor: '#333333',
     resizeMode: 'contain',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#fff',
+
   },
 
   textoIntro: {
@@ -114,8 +115,8 @@ const styles = StyleSheet.create({
     padding: 16,
     borderRadius: 12,
     marginBottom: 20,
-    borderWidth: 1,
-    borderColor: '#D3D3D3',
+    borderWidth: 2,
+    borderColor: '#8b0000',
     elevation: 4,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 3 },
@@ -128,6 +129,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#2B2B2B',
     marginBottom: 12,
+    textAlign: 'center',
+    color: '#8b0000',
+    fontWeight: 'bold',
   },
 
   cardImg: {

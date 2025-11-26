@@ -6,7 +6,7 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 export default function TabLayout() {
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: 'blue' }}>
+    <Tabs screenOptions={{ tabBarActiveTintColor: '#8b0000' }}>
       <Tabs.Screen
         name="index"
         options={{
@@ -56,6 +56,16 @@ export default function TabLayout() {
           href: null,
           headerShown: false,
         }}
+      />
+      <Tabs.Screen
+      name="perfil"
+      options={{
+        title: 'Perfil',
+        tabBarIcon: ({ color }) => (
+        <MaterialCommunityIcons size={28} name='account-circle' color={color}/>
+      ),
+        headerShown: false,
+      }}
       />
     </Tabs>
   );

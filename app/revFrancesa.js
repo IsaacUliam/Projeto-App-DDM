@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     color: '#8B0000',
     textAlign: 'center',
     marginBottom: 20,
-    marginTop: 15,
+    marginTop: 40,
     letterSpacing: 1.5,
     borderBottomWidth: 4,
     borderBottomColor: '#333333',
