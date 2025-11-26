@@ -25,8 +25,10 @@ export default function App() {
 
   return (
     <ScrollView>
-      <View style={styles.container}>
+    <backgroundColor style={{backgroundColor: '#f4f4f4',}}>
         <Text style={styles.titulo}>Motores a Vapor</Text>
+        <View style={{ width: '100%', height: 4, paddingLeft: -20  , backgroundColor: '#333', marginTop: 5, marginBottom: 20 }} />
+      <View style={styles.container}>
         <Image source={motorLogo} style={styles.img} />
         <Text style={styles.texto}>
           Nesse cenário de crescimento industrial, a máquina a vapor tornou-se o símbolo
@@ -114,6 +116,7 @@ export default function App() {
 
         <StatusBar style="auto" />
       </View>
+</backgroundColor>
     </ScrollView>
   );
 }
@@ -125,7 +128,7 @@ const styles = StyleSheet.create({
     padding: 20,
     paddingTop: 50,
   },
-
+  
   duasImagens: {
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -155,11 +158,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#8B0000',
     textAlign: 'center',
-    marginBottom: 20,
+    marginTop: 30,
     letterSpacing: 1.5,
-    borderBottomWidth: 4,
-    borderBottomColor: '#333333',
-    paddingBottom: 10,
   },
 
   texto: {

@@ -11,9 +11,11 @@ export default function App() {
 
   return (
     <ScrollView>
-      <View style={styles.container}>
+      <backgroundColor style={{backgroundColor: '#f4f4f4',}}>
         
         <Text style={styles.titulo}>Motores a Combustão Interna</Text>
+        <View style={{ width: '100%', height: 4, backgroundColor: '#333', marginTop: 5, marginBottom: 20 }} />
+      <View style={styles.container}>
 
         <Image source={logo} style={styles.imgLogo} />
 
@@ -42,6 +44,7 @@ export default function App() {
         <StatusBar style="auto" />
         
       </View>
+</backgroundColor>
     </ScrollView>
   );
 }
@@ -51,21 +54,18 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F5F5F5',
     padding: 20,
-    paddingTop: 50,
   },
-
+  
   titulo: {
-    fontSize: 32,
+    fontSize: 34,
     fontWeight: 'bold',
     color: '#8B0000',
     textAlign: 'center',
     marginBottom: 20,
-    letterSpacing: 1.2,
-    borderBottomWidth: 4,
-    borderBottomColor: '#3A3A3A',
-    paddingBottom: 8,
+    marginTop: 40,
+    letterSpacing: 1.5,
   },
-
+  
   imgLogo: {
     width: 180,
     height: 180,

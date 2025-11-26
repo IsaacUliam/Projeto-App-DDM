@@ -17,7 +17,10 @@ export default function Motor2T() {
       </View>
 
       <ScrollView contentContainerStyle={styles.scroll}>
+      <backgroundColor style={{backgroundColor: '#f4f4f4',}}>
         <Text style={styles.titulo}>Motor 2 Tempos</Text>
+        <View style={styles.linha} />
+
 
         <Text style={styles.texto2}>
           Os motores 2 tempos são conhecidos pela simplicidade e pelo funcionamento rápido.
@@ -57,7 +60,7 @@ export default function Motor2T() {
         <Image
           source={require('../assets/2-tempos.gif')}
           style={styles.gif}
-        />
+          />
 
         <Text style={styles.texto}>
           O motor realiza esse movimento de subida e descida...
@@ -81,13 +84,14 @@ export default function Motor2T() {
         </View>
 
         <StatusBar style="auto" />
+</backgroundColor>
       </ScrollView>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-
+  
   container: {
     flex: 1,
     backgroundColor: "#f4f4f4",
@@ -96,6 +100,17 @@ const styles = StyleSheet.create({
   header: {
     padding: 20,
   },
+
+  linha: {
+  width: '200%',
+  height: 3,
+  backgroundColor: '#333',
+  marginTop: 5,
+  marginBottom: 20,
+  alignSelf: 'center',
+},
+
+
 
   voltar: {
     fontSize: 20,
@@ -121,10 +136,8 @@ const styles = StyleSheet.create({
     color: '#8B0000',
     textAlign: 'center',
     marginBottom: 20,
+    marginTop: 40,
     letterSpacing: 1.5,
-    borderBottomWidth: 4,
-    borderBottomColor: '#333333',
-    paddingBottom: 10,
   },
 
   texto: {

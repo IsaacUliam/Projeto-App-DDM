@@ -1,44 +1,60 @@
 import { StatusBar } from "expo-status-bar";
 import { Image, ScrollView, StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import logo from "../assets/logo-real.png";
+import foto from "../assets/logo-real.png";
 
 export default function App() {
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
+    <backgroundColor style={{backgroundColor: '#f4f4f4',}}>
       <View style={styles.container}>
-        <Text style={styles.titulo}>perfil</Text>
-        <Image source={logo} style={styles.img} />
-        <View style={{flexDirection: 'row',}}>
-            <Text style={styles.subtituloNegro}>Idade: </Text><Text style={styles.subtitulo}>Isaac Daniel Silva Uliam</Text>
+        <Text style={styles.titulo}>Perfil</Text>
+        <View style={{ width: '100%', height: 4, backgroundColor: '#333', marginTop: 5, marginBottom: 20 }} />
+        <Image source={foto} style={styles.img} />
+
+        <View style={styles.infoContainer}>
+          <View style={styles.infoRow}>
+            <Text style={styles.label}>Nome:</Text>
+            <Text style={styles.value}>Isaac Daniel Silva Uliam</Text>
+          </View>
+          <View style={styles.infoRow}>
+            <Text style={styles.label}>Idade:</Text>
+            <Text style={styles.value}>20 anos</Text>
+          </View>
+          <View style={styles.infoRow}>
+            <Text style={styles.label}>Cidade:</Text>
+            <Text style={styles.value}>São Paulo</Text>
+          </View>
+          <View style={styles.infoRow}>
+            <Text style={styles.label}>Profissão:</Text>
+            <Text style={styles.value}>Estudante / Desenvolvedor</Text>
+          </View>
         </View>
-        <View style={{flexDirection: 'row',}}>
-            <Text style={styles.subtituloNegro}>Nome: </Text><Text style={styles.subtitulo}>Isaac Daniel Silva Uliam</Text>
-        </View>
-        <View style={{flexDirection: 'row',}}>
-            <Text style={styles.subtituloNegro}>Nome: </Text><Text style={styles.subtitulo}>Isaac Daniel Silva Uliam</Text>
-        </View>
-        
+
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Saiba Mais</Text>
+          <Text style={styles.buttonText}>Editar Perfil</Text>
         </TouchableOpacity>
-        
+
+        <View style={styles.footer}>
+          <Text style={styles.footerText}>© 2025 Meu Perfil. Todos os direitos reservados.</Text>
+        </View>
+
         <StatusBar style="auto" />
       </View>
+</backgroundColor>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   scrollContainer: {
-    paddingBottom: 30,  // Espaço para o final da tela
+    paddingBottom: 40,
   },
-
+  
   container: {
     flex: 1,
-    backgroundColor: "#f2f2f2",
-    paddingVertical: 40,
+    backgroundColor: "#f5f5f8",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-start",
   },
 
   titulo: {
@@ -47,47 +63,29 @@ const styles = StyleSheet.create({
     color: '#8B0000',
     textAlign: 'center',
     marginBottom: 20,
+    marginTop: 40,
     letterSpacing: 1.5,
-    borderBottomWidth: 4,
-    borderBottomColor: '#333333',
-    paddingBottom: 10,
-  },
-
-  subtitulo: {
-    fontSize: 22,
-    color: "#333",
-    textAlign: 'center',
-  },
-
-  subtituloNegro: {
-    fontSize: 22,
-    color: "#333",
-    fontWeight: 'bold',
-    textAlign: 'center',
   },
 
   img: {
-    width: 240,
-    height: 240,
-    marginBottom: 20,
-    borderRadius: 120,  // Deixa a imagem com borda arredondada
-    borderWidth: 5,
-    borderColor: '#000', // Um contorno sutil
+    width: 220,
+    height: 220,
+    marginBottom: 25,
+    borderRadius: 110,
+    borderWidth: 4,
+    borderColor: '#8B0000',
     shadowColor: "#000",
-    shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.3,
-    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.25,
+    shadowRadius: 8,
     backgroundColor: '#fff',
   },
 
-  textos: {
+  infoContainer: {
     width: "90%",
-    fontSize: 17,
-    lineHeight: 24,
-    color: "#333",
     backgroundColor: "#fff",
-    padding: 20,
     borderRadius: 15,
+    padding: 20,
     marginBottom: 30,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 4 },
@@ -96,12 +94,29 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
 
+  infoRow: {
+    flexDirection: 'row',
+    marginBottom: 12,
+  },
+
+  label: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#8B0000',
+    width: 100,
+  },
+
+  value: {
+    fontSize: 18,
+    color: '#333',
+    flexShrink: 1,
+  },
+
   button: {
     backgroundColor: "#8B0000",
-    paddingVertical: 12,
-    paddingHorizontal: 30,
-    borderRadius: 25,
-    marginTop: 20,
+    paddingVertical: 14,
+    paddingHorizontal: 40,
+    borderRadius: 30,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 6 },
     shadowOpacity: 0.1,
@@ -114,5 +129,20 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontWeight: '600',
     textAlign: 'center',
+  },
+
+  footer: {
+    marginTop: 40,
+    paddingVertical: 20,
+    width: "100%",
+    borderTopWidth: 1,
+    borderTopColor: "#ddd",
+    alignItems: "center",
+  },
+
+  footerText: {
+    color: "#777",
+    fontSize: 14,
+    textAlign: "center",
   },
 });

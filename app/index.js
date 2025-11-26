@@ -1,102 +1,186 @@
 import { StatusBar } from "expo-status-bar";
-import { Image, ScrollView, StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View, TouchableOpacity, Platform } from "react-native";
 import logo from "../assets/logo-real.png";
 
 export default function App() {
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
+      <backgroundColor style={{backgroundColor: '#f4f4f4',}}>
       <View style={styles.container}>
         <Text style={styles.titulo}>Revolução e Inovação</Text>
+        <View style={styles.linha}/>
         <Image source={logo} style={styles.img} />
+        
         <Text style={styles.textos}>
           Nas ruas de Paris, o fogo da revolta acendeu ideias que ecoariam por séculos. Enquanto
           multidões lutavam por liberdade, em oficinas e laboratórios uma nova chama surgia —
-          discreta, mas capaz de mudar o rumo do progresso. O mesmo espírito que derrubou reis e
-          ergueu nações também despertou a força que colocaria o mundo em movimento.
+          discreta, mas capaz de mudar o rumo do progresso.
         </Text>
-        
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Saiba Mais</Text>
-        </TouchableOpacity>
-        
+
+        <View style={styles.cardsContainer}>
+          <View style={styles.card}>
+            <Text style={styles.cardTitle}>Liberdade</Text>
+            <Text style={styles.cardText}>
+              A busca pela liberdade moldou sociedades, derrubando estruturas antigas e abrindo caminho para novas ideias.
+            </Text>
+          </View>
+
+          <View style={styles.card}>
+            <Text style={styles.cardTitle}>Tecnologia</Text>
+            <Text style={styles.cardText}>
+              Inovações surgiam silenciosas em laboratórios, mudando o ritmo do mundo e conectando pessoas.
+            </Text>
+          </View>
+
+          <View style={styles.card}>
+            <Text style={styles.cardTitle}>Progresso</Text>
+            <Text style={styles.cardText}>
+              A combinação de coragem e conhecimento impulsionou o crescimento das nações e da humanidade.
+            </Text>
+          </View>
+        </View>
+
+        <View style={styles.footer}>
+          <Text style={styles.footerText}>© 2025 Revolução e Inovação. Todos os direitos reservados.</Text>
+        </View>
+
         <StatusBar style="auto" />
       </View>
+    </backgroundColor>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   scrollContainer: {
-    paddingBottom: 30,  // Espaço para o final da tela
+    paddingBottom: 40,
+    alignItems: Platform.OS === 'web' ? 'center' : 'stretch',
   },
 
   container: {
     flex: 1,
-    backgroundColor: "#f2f2f2",
+    backgroundColor: "#f4f4f4",
     paddingVertical: 40,
     alignItems: "center",
     justifyContent: "center",
+    width: "100%",
+    maxWidth: Platform.OS === 'web' ? 900 : "100%",
   },
 
+  linha: {
+    width: '200%',
+    height: Platform.OS === 'web' ? 6 : 4,
+    backgroundColor: '#333',
+    marginTop: 5,
+    marginBottom: 20,
+    alignSelf: 'center',
+},
+
   titulo: {
-    fontSize: 34,
+    fontSize: Platform.OS === 'web' ? 60 : 34,
     fontWeight: 'bold',
     color: '#8B0000',
     textAlign: 'center',
     marginBottom: 20,
+    marginTop: 40,
     letterSpacing: 1.5,
-    borderBottomWidth: 4,
-    borderBottomColor: '#333333',
-    paddingBottom: 10,
   },
 
   img: {
-    width: 240,
-    height: 240,
-    marginBottom: 20,
-    borderRadius: 120,  // Deixa a imagem com borda arredondada
+    width: Platform.OS === 'web' ? 280 : 220,
+    height: Platform.OS === 'web' ? 280 : 220,
+    marginBottom: 25,
+    borderRadius: Platform.OS === 'web' ? 140 : 110,
     borderWidth: 5,
-    borderColor: '#000', // Um contorno sutil
+    borderColor: '#333333',
     shadowColor: "#000",
-    shadowOffset: { width: 0, height: 8 },
+    shadowOffset: { width: 0, height: Platform.OS === 'web' ? 12 : 8 },
     shadowOpacity: 0.3,
-    shadowRadius: 10,
+    shadowRadius: Platform.OS === 'web' ? 14 : 10,
     backgroundColor: '#fff',
   },
 
   textos: {
-    width: "90%",
-    fontSize: 17,
-    lineHeight: 24,
+    width: "95%",
+    fontSize: Platform.OS === 'web' ? 20 : 17,
+    lineHeight: Platform.OS === 'web' ? 30 : 26,
     color: "#333",
     backgroundColor: "#fff",
-    padding: 20,
+    padding: Platform.OS === 'web' ? 30 : 20,
     borderRadius: 15,
     marginBottom: 30,
     shadowColor: "#000",
-    shadowOffset: { width: 0, height: 4 },
+    shadowOffset: { width: 0, height: Platform.OS === 'web' ? 6 : 4 },
     shadowOpacity: 0.1,
     shadowRadius: 8,
     elevation: 5,
+    textAlign: "justify",
+  },
+
+  cardsContainer: {
+    width: "95%",
+    marginBottom: 30,
+  },
+
+  card: {
+    backgroundColor: "#fff",
+    padding: Platform.OS === 'web' ? 28 : 20,
+    borderRadius: 15,
+    marginBottom: 15,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: Platform.OS === 'web' ? 6 : 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 5,
+    borderLeftWidth: 5,
+    borderLeftColor: '#8B0000',
+  },
+
+  cardTitle: {
+    fontSize: Platform.OS === 'web' ? 26 : 20,
+    fontWeight: "bold",
+    color: "#8B0000",
+    marginBottom: 10,
+  },
+
+  cardText: {
+    fontSize: Platform.OS === 'web' ? 19 : 16,
+    color: "#555",
+    lineHeight: Platform.OS === 'web' ? 28 : 22,
   },
 
   button: {
     backgroundColor: "#8B0000",
-    paddingVertical: 12,
-    paddingHorizontal: 30,
-    borderRadius: 25,
-    marginTop: 20,
+    paddingVertical: Platform.OS === 'web' ? 18 : 14,
+    paddingHorizontal: Platform.OS === 'web' ? 60 : 40,
+    borderRadius: 30,
+    marginTop: 10,
     shadowColor: "#000",
-    shadowOffset: { width: 0, height: 6 },
+    shadowOffset: { width: 0, height: Platform.OS === 'web' ? 10 : 6 },
     shadowOpacity: 0.1,
     shadowRadius: 8,
     elevation: 5,
   },
 
   buttonText: {
-    fontSize: 18,
+    fontSize: Platform.OS === 'web' ? 22 : 18,
     color: "#fff",
     fontWeight: '600',
     textAlign: 'center',
+  },
+
+  footer: {
+    marginTop: 40,
+    paddingVertical: 20,
+    width: "100%",
+    borderTopWidth: 1,
+    borderTopColor: "#ddd",
+    alignItems: "center",
+  },
+
+  footerText: {
+    color: "#777",
+    fontSize: Platform.OS === 'web' ? 16 : 14,
+    textAlign: "center",
   },
 });

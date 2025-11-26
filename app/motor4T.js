@@ -17,19 +17,21 @@ export default function Motor4T() {
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContent}>
 
+      <backgroundColor style={{backgroundColor: '#f4f4f4',}}>
         <Pressable onPress={() => router.back()} style={styles.voltar}>
           <Text style={styles.voltarTexto}>Voltar</Text>
         </Pressable>
 
         <Text style={styles.titulo}>Motor 4 Tempos</Text>
+        <View style={styles.linha}/>
 
-        <Text style={styles.texto}>
+        <Text style={styles.texto2}>
           Os motores 4 tempos são conhecidos pelo funcionamento mais suave e eficiente.
         </Text>
 
         <Image source={motor01} style={styles.img} />
 
-        <Text style={styles.texto}>
+        <Text style={styles.texto2}>
           Eles completam o ciclo de combustão em quatro etapas bem definidas, o que os torna mais econômicos, duráveis e menos poluentes. São comuns na maioria das motos modernas, carros e máquinas que precisam de desempenho estável e confiável.
         </Text>
 
@@ -127,6 +129,7 @@ export default function Motor4T() {
 
 
         <StatusBar style="auto" />
+</backgroundColor>
 
       </ScrollView>
     </View >
@@ -142,6 +145,15 @@ const styles = StyleSheet.create({
   scrollContent: {
     padding: 20,
   },
+
+  linha: {
+  width: '200%',
+  height: 3,
+  backgroundColor: '#333',
+  marginTop: 5,
+  marginBottom: 20,
+  alignSelf: 'center',
+},
 
   voltarTexto: {
     fontSize: 20,
@@ -162,10 +174,8 @@ const styles = StyleSheet.create({
     color: '#8B0000',
     textAlign: 'center',
     marginBottom: 20,
+    marginTop: 40,
     letterSpacing: 1.5,
-    borderBottomWidth: 4,
-    borderBottomColor: '#333333',
-    paddingBottom: 10,
   },
 
   subtitulo: {
@@ -200,6 +210,15 @@ const styles = StyleSheet.create({
     lineHeight: 22,
     marginBottom: 10,
     marginTop: 10,
+  },
+
+  texto2: {
+    fontSize: 18,
+    color: "#000",
+    lineHeight: 24,
+    marginBottom:20,
+    marginTop: 20,
+    textAlign: 'justify',
   },
 
   lista: {
