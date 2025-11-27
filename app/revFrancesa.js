@@ -90,15 +90,15 @@ const styles = StyleSheet.create({
   },
 
   linha: {
-    width: "90%",
-    height: 4,
+    width: "100%",
+    height: Platform.OS === "web" ? 6 : 4,
     backgroundColor: "#333",
     marginBottom: 20,
   },
 
   imagem: {
     width: Platform.OS === "web" ? "80%" : "90%",
-    height: Platform.OS === "web" ? 320 : 220,
+    height: Platform.OS === "web" ? 420 : 220,
     marginVertical: 20,
     borderWidth: 3,
     borderColor: "#333",

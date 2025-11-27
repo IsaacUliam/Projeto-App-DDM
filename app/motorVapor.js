@@ -1,7 +1,8 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { Image, ScrollView, StyleSheet, Text, View, Pressable, UIManager, Platform } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View, Pressable, UIManager, Platform, ImageBackground } from "react-native";
 import { LayoutAnimation } from 'react-native';
+import bg from "../assets/background.png";
 import motorLogo from "../assets/motorVapor1.png";
 import motor from "../assets/motorVapor2.png";
 import trem1 from "../assets/locomotiva1.png";
@@ -24,11 +25,12 @@ export default function App() {
   };
 
   return (
-    <ScrollView>
-    <backgroundColor style={{backgroundColor: '#f4f4f4',}}>
-        <Text style={styles.titulo}>Motores a Vapor</Text>
-        <View style={{ width: '100%', height: 4, paddingLeft: -20  , backgroundColor: '#333', marginTop: 5, marginBottom: 20 }} />
+    <ImageBackground source={bg} style={styles.bg}>
+          <View style={styles.overlay}>
+    <ScrollView contentContainerStyle={styles.scrollContainer}>
       <View style={styles.container}>
+        <Text style={styles.titulo}>Motores a Vapor</Text>
+        <View style={styles.linha} />
         <Image source={motorLogo} style={styles.img} />
         <Text style={styles.texto}>
           Nesse cenário de crescimento industrial, a máquina a vapor tornou-se o símbolo
@@ -116,151 +118,171 @@ export default function App() {
 
         <StatusBar style="auto" />
       </View>
-</backgroundColor>
     </ScrollView>
+    </View>
+  </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F5F5F5',
-    padding: 20,
-    paddingTop: 50,
-  },
-  
-  duasImagens: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    flexWrap: 'wrap',
-    marginTop: 15,
+  scrollContainer: {
+    alignItems: "center",
+    paddingBottom: 40,
   },
 
-  imagens: {
-    width: '48%',
-    minWidth: 140,
-    height: 120,
-    resizeMode: 'cover',
-    alignSelf: 'center',
-    borderRadius: 8,
-    marginVertical: 5,
-    borderWidth: 2,
-    borderColor: '#C0C0C0',
-    elevation: 3,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 3.84,
+  container: {
+    flex: 1,
+    width: "100%",
+    maxWidth: Platform.OS === "web" ? 900 : "100%",
+    alignItems: "center",
+    paddingTop: Platform.OS === "web" ? 40 : 20,
+    paddingHorizontal: Platform.OS === "web" ? 20 : 10,
+  },
+
+  overlay: {
+    flex: 1,
+    backgroundColor: "rgba(255,255,255,0.8)",
+  },
+
+  bg: {
+    flex: 1,
+    resizeMode: "cover",
+  },
+
+  linha: {
+    width: "100%",
+    height: Platform.OS === "web" ? 6 : 4,
+    backgroundColor: "#333",
+    marginBottom: 20,
   },
 
   titulo: {
-    fontSize: 34,
+    fontSize: Platform.OS === 'web' ? 60 : 34,
     fontWeight: 'bold',
     color: '#8B0000',
     textAlign: 'center',
-    marginTop: 30,
+    marginTop: Platform.OS === 'web' ? 40 : 30,
     letterSpacing: 1.5,
   },
 
   texto: {
-    fontSize: 16,
-    lineHeight: 24,
+    width: Platform.OS === "web" ? "85%" : "95%",
+    fontSize: Platform.OS === "web" ? 20 : 16,
+    lineHeight: Platform.OS === "web" ? 30 : 24,
     textAlign: 'justify',
     marginBottom: 25,
     color: '#333333',
     backgroundColor: '#FFFFFF',
     borderRadius: 12,
-    padding: 15,
+    padding: Platform.OS === "web" ? 28 : 15,
     borderLeftWidth: 5,
     borderLeftColor: '#8B0000',
     elevation: 2,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-    borderRadius: 10,
-    boxShadow: "0px 10px 14px #444",
+    shadowOffset: { width: 0, height: Platform.OS === "web" ? 10 : 1 },
+    shadowOpacity: Platform.OS === "web" ? 0.15 : 0.1,
+    shadowRadius: Platform.OS === "web" ? 10 : 2,
   },
 
   img: {
-    width: 200,
-    height: 200,
+    width: Platform.OS === "web" ? 280 : 200,
+    height: Platform.OS === "web" ? 280 : 200,
     alignSelf: 'center',
     marginBottom: 25,
-    borderRadius: 100,
-    borderWidth: 4,
+    borderRadius: 150,
+    borderWidth: Platform.OS === "web" ? 5 : 4,
     borderColor: '#333333',
     resizeMode: 'contain',
-    backgroundColor: '#fff',
-
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: Platform.OS === "web" ? 12 : 6 },
+    shadowOpacity: Platform.OS === "web" ? 0.3 : 0.2,
+    shadowRadius: Platform.OS === "web" ? 10 : 5,
   },
 
   imgPequena: {
-    width: '100%',
-    height: 200,
+    width: Platform.OS === "web" ? "85%" : '100%',
+    height: Platform.OS === "web" ? 280 : 200,
     alignSelf: 'center',
     marginTop: 15,
     borderRadius: 8,
     borderWidth: 2,
     borderColor: '#A9A9A9',
     resizeMode: 'cover',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: Platform.OS === "web" ? 8 : 2 },
+    shadowOpacity: Platform.OS === "web" ? 0.15 : 0.1,
+    shadowRadius: Platform.OS === "web" ? 8 : 3,
   },
 
   imgPequena2: {
-    width: '100%',
-    height: 180,
+    width: Platform.OS === "web" ? "85%" : '100%',
+    height: Platform.OS === "web" ? 260 : 180,
     alignSelf: 'center',
     marginTop: 15,
     borderRadius: 8,
     borderWidth: 2,
     borderColor: '#A9A9A9',
     resizeMode: 'cover',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: Platform.OS === "web" ? 8 : 2 },
+    shadowOpacity: Platform.OS === "web" ? 0.15 : 0.1,
+    shadowRadius: Platform.OS === "web" ? 8 : 3,
   },
 
   imgGif: {
-    width: '100%',
-    height: 160,
+    width: Platform.OS === "web" ? "90%" : '100%',
+    height: Platform.OS === "web" ? 240 : 160,
     alignSelf: 'center',
     borderRadius: 8,
     borderWidth: 2,
     borderColor: '#A9A9A9',
     marginTop: 15,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: Platform.OS === "web" ? 8 : 2 },
+    shadowOpacity: Platform.OS === "web" ? 0.15 : 0.1,
+    shadowRadius: Platform.OS === "web" ? 8 : 3,
   },
 
   bloco: {
     marginTop: 10,
-    padding: 15,
+    padding: Platform.OS === "web" ? 28 : 15,
     backgroundColor: '#FFFFFF',
     borderRadius: 12,
     borderWidth: 1,
     borderColor: '#D3D3D3',
+    width: Platform.OS === "web" ? "85%" : "100%",
+    alignSelf: 'center',
     elevation: 4,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.1,
-    shadowRadius: 5.46,
+    shadowOffset: { width: 0, height: Platform.OS === "web" ? 10 : 4 },
+    shadowOpacity: Platform.OS === "web" ? 0.15 : 0.1,
+    shadowRadius: Platform.OS === "web" ? 10 : 5,
   },
 
   textoBloco: {
-    fontSize: 16,
-    lineHeight: 24,
+    fontSize: Platform.OS === "web" ? 18 : 16,
+    lineHeight: Platform.OS === "web" ? 28 : 24,
     color: '#333333',
     textAlign: 'justify',
-    
   },
 
   botao: {
-    paddingVertical: 12,
+    width: Platform.OS === "web" ? "85%" : "100%",
+    paddingVertical: Platform.OS === "web" ? 16 : 12,
     backgroundColor: '#DCDCDC',
     borderRadius: 8,
     borderWidth: 1,
     borderColor: '#A9A9A9',
     elevation: 2,
-    
+    alignSelf: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: Platform.OS === "web" ? 6 : 2 },
+    shadowOpacity: Platform.OS === "web" ? 0.12 : 0.08,
+    shadowRadius: Platform.OS === "web" ? 6 : 3,
   },
 
   botaoTexto: {
-    fontSize: 18,
+    fontSize: Platform.OS === "web" ? 20 : 18,
     fontWeight: '800',
     textAlign: 'center',
     color: '#4F4F4F',
@@ -269,7 +291,7 @@ const styles = StyleSheet.create({
   },
 
   subtitulo: {
-    fontSize: 18,
+    fontSize: Platform.OS === "web" ? 22 : 18,
     fontWeight: 'bold',
     color: '#8B0000',
     marginTop: 15,
@@ -277,5 +299,31 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#D3D3D3',
     paddingBottom: 3,
+  },
+
+  duasImagens: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    flexWrap: 'wrap',
+    marginTop: 15,
+    width: Platform.OS === "web" ? "85%" : "100%",
+    alignSelf: 'center',
+  },
+
+  imagens: {
+    width: Platform.OS === "web" ? "45%" : '48%',
+    minWidth: 140,
+    height: Platform.OS === "web" ? 200 : 120,
+    resizeMode: 'cover',
+    alignSelf: 'center',
+    borderRadius: 8,
+    marginVertical: 5,
+    borderWidth: 2,
+    borderColor: '#C0C0C0',
+    elevation: 3,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: Platform.OS === "web" ? 8 : 2 },
+    shadowOpacity: Platform.OS === "web" ? 0.15 : 0.1,
+    shadowRadius: Platform.OS === "web" ? 8 : 3,
   },
 });

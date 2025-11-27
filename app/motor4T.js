@@ -16,8 +16,6 @@ export default function Motor4T() {
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContent}>
-
-      <backgroundColor style={{backgroundColor: '#f4f4f4',}}>
         <Pressable onPress={() => router.back()} style={styles.voltar}>
           <Text style={styles.voltarTexto}>Voltar</Text>
         </Pressable>
@@ -129,8 +127,6 @@ export default function Motor4T() {
 
 
         <StatusBar style="auto" />
-</backgroundColor>
-
       </ScrollView>
     </View >
   );

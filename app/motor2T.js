@@ -17,7 +17,6 @@ export default function Motor2T() {
       </View>
 
       <ScrollView contentContainerStyle={styles.scroll}>
-      <backgroundColor style={{backgroundColor: '#f4f4f4',}}>
         <Text style={styles.titulo}>Motor 2 Tempos</Text>
         <View style={styles.linha} />
 
@@ -84,7 +83,6 @@ export default function Motor2T() {
         </View>
 
         <StatusBar style="auto" />
-</backgroundColor>
       </ScrollView>
     </View>
   );

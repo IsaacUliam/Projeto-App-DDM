@@ -1,11 +1,14 @@
 import { StatusBar } from "expo-status-bar";
-import { Image, ScrollView, StyleSheet, Text, View, TouchableOpacity, Platform } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View, TouchableOpacity, Platform, ImageBackground } from "react-native";
 import logo from "../assets/logo-real.png";
+import bg from "../assets/background.png";
+
 
 export default function App() {
   return (
+    <ImageBackground source={bg} style={styles.bg}>
+      <View style={styles.overlay}>
     <ScrollView contentContainerStyle={styles.scrollContainer}>
-      <backgroundColor style={{backgroundColor: '#f4f4f4',}}>
       <View style={styles.container}>
         <Text style={styles.titulo}>Revolução e Inovação</Text>
         <View style={styles.linha}/>
@@ -46,8 +49,9 @@ export default function App() {
 
         <StatusBar style="auto" />
       </View>
-    </backgroundColor>
     </ScrollView>
+</View>
+</ImageBackground>
   );
 }
 
@@ -56,10 +60,19 @@ const styles = StyleSheet.create({
     paddingBottom: 40,
     alignItems: Platform.OS === 'web' ? 'center' : 'stretch',
   },
+  
+  overlay: {
+    flex: 1,
+    backgroundColor: "rgba(255,255,255,0.8)",
+  },
+
+  bg: {
+    flex: 1,
+    resizeMode: "cover",
+  },
 
   container: {
     flex: 1,
-    backgroundColor: "#f4f4f4",
     paddingVertical: 40,
     alignItems: "center",
     justifyContent: "center",
@@ -68,7 +81,7 @@ const styles = StyleSheet.create({
   },
 
   linha: {
-    width: '200%',
+    width: '100%',
     height: Platform.OS === 'web' ? 6 : 4,
     backgroundColor: '#333',
     marginTop: 5,
@@ -97,7 +110,6 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: Platform.OS === 'web' ? 12 : 8 },
     shadowOpacity: 0.3,
     shadowRadius: Platform.OS === 'web' ? 14 : 10,
-    backgroundColor: '#fff',
   },
 
   textos: {

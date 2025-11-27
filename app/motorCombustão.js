@@ -11,8 +11,6 @@ export default function App() {
 
   return (
     <ScrollView>
-      <backgroundColor style={{backgroundColor: '#f4f4f4',}}>
-        
         <Text style={styles.titulo}>Motores a Combustão Interna</Text>
         <View style={{ width: '100%', height: 4, backgroundColor: '#333', marginTop: 5, marginBottom: 20 }} />
       <View style={styles.container}>
@@ -44,7 +42,6 @@ export default function App() {
         <StatusBar style="auto" />
         
       </View>
-</backgroundColor>
     </ScrollView>
   );
 }

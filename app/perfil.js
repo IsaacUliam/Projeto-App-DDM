@@ -5,7 +5,6 @@ import foto from "../assets/logo-real.png";
 export default function App() {
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
-    <backgroundColor style={{backgroundColor: '#f4f4f4',}}>
       <View style={styles.container}>
         <Text style={styles.titulo}>Perfil</Text>
         <View style={{ width: '100%', height: 4, backgroundColor: '#333', marginTop: 5, marginBottom: 20 }} />
@@ -40,7 +39,6 @@ export default function App() {
 
         <StatusBar style="auto" />
       </View>
-</backgroundColor>
     </ScrollView>
   );
 }
