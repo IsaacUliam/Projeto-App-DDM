@@ -30,7 +30,6 @@ export default function App() {
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <View style={styles.container}>
         <Text style={styles.titulo}>Motores a Vapor</Text>
-        <View style={styles.linha} />
         <Image source={motorLogo} style={styles.img} />
         <Text style={styles.texto}>
           Nesse cenário de crescimento industrial, a máquina a vapor tornou-se o símbolo
@@ -132,11 +131,12 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    width: "100%",
-    maxWidth: Platform.OS === "web" ? 900 : "100%",
+    paddingTop: 0,
+    paddingBottom: 40,
     alignItems: "center",
-    paddingTop: Platform.OS === "web" ? 40 : 20,
-    paddingHorizontal: Platform.OS === "web" ? 20 : 10,
+    justifyContent: "flex-start",
+    width: "100%",
+    maxWidth: Platform.OS === 'web' ? 900 : "100%",
   },
 
   overlay: {
@@ -149,24 +149,25 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
   },
 
-  linha: {
-    width: "100%",
-    height: Platform.OS === "web" ? 6 : 4,
-    backgroundColor: "#333",
-    marginBottom: 20,
-  },
-
   titulo: {
     fontSize: Platform.OS === 'web' ? 60 : 34,
     fontWeight: 'bold',
-    color: '#8B0000',
+    color: '#fff',
+    backgroundColor: '#8B0000',
     textAlign: 'center',
-    marginTop: Platform.OS === 'web' ? 40 : 30,
+    width: '100%',
+    alignSelf: 'stretch',
+    marginBottom: 20,
+    paddingTop: 40,
+    paddingBottom: 30,
     letterSpacing: 1.5,
+    borderRadius: 0,
+    borderBottomWidth: 4,
+    borderBottomColor: '#333',
   },
 
   texto: {
-    width: Platform.OS === "web" ? "85%" : "95%",
+    width: Platform.OS === "web" ? "85%" : "90%",
     fontSize: Platform.OS === "web" ? 20 : 16,
     lineHeight: Platform.OS === "web" ? 30 : 24,
     textAlign: 'justify',
@@ -200,8 +201,8 @@ const styles = StyleSheet.create({
   },
 
   imgPequena: {
-    width: Platform.OS === "web" ? "85%" : '100%',
-    height: Platform.OS === "web" ? 280 : 200,
+    width: Platform.OS === "web" ? "85%" : 300,
+    height: Platform.OS === "web" ? 280 : 240,
     alignSelf: 'center',
     marginTop: 15,
     borderRadius: 8,
@@ -215,7 +216,7 @@ const styles = StyleSheet.create({
   },
 
   imgPequena2: {
-    width: Platform.OS === "web" ? "85%" : '100%',
+    width: Platform.OS === "web" ? "85%" : 300,
     height: Platform.OS === "web" ? 260 : 180,
     alignSelf: 'center',
     marginTop: 15,
@@ -250,7 +251,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     borderWidth: 1,
     borderColor: '#D3D3D3',
-    width: Platform.OS === "web" ? "85%" : "100%",
+    width: Platform.OS === "web" ? "85%" : "90%",
     alignSelf: 'center',
     elevation: 4,
     shadowColor: '#000',
@@ -267,7 +268,7 @@ const styles = StyleSheet.create({
   },
 
   botao: {
-    width: Platform.OS === "web" ? "85%" : "100%",
+    width: Platform.OS === "web" ? "85%" : 300,
     paddingVertical: Platform.OS === "web" ? 16 : 12,
     backgroundColor: '#DCDCDC',
     borderRadius: 8,

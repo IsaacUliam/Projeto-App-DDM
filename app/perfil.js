@@ -1,45 +1,44 @@
 import { StatusBar } from "expo-status-bar";
-import { Image, ScrollView, StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View, TouchableOpacity, ImageBackground, Platform } from "react-native";
 import foto from "../assets/logo-real.png";
+import bg from "../assets/background.png"; 
 
 export default function App() {
   return (
-    <ScrollView contentContainerStyle={styles.scrollContainer}>
-      <View style={styles.container}>
-        <Text style={styles.titulo}>Perfil</Text>
-        <View style={{ width: '100%', height: 4, backgroundColor: '#333', marginTop: 5, marginBottom: 20 }} />
-        <Image source={foto} style={styles.img} />
+    <ImageBackground source={bg} style={styles.bg}>
+      <View style={styles.overlay}>
+        <ScrollView contentContainerStyle={styles.scrollContainer}>
+          <View style={styles.container}>
+            <Text style={styles.titulo}>Perfil</Text>
+            <Image source={foto} style={styles.img} />
 
-        <View style={styles.infoContainer}>
-          <View style={styles.infoRow}>
-            <Text style={styles.label}>Nome:</Text>
-            <Text style={styles.value}>Isaac Daniel Silva Uliam</Text>
-          </View>
-          <View style={styles.infoRow}>
-            <Text style={styles.label}>Idade:</Text>
-            <Text style={styles.value}>20 anos</Text>
-          </View>
-          <View style={styles.infoRow}>
-            <Text style={styles.label}>Cidade:</Text>
-            <Text style={styles.value}>São Paulo</Text>
-          </View>
-          <View style={styles.infoRow}>
-            <Text style={styles.label}>Profissão:</Text>
-            <Text style={styles.value}>Estudante / Desenvolvedor</Text>
-          </View>
-        </View>
+            <View style={styles.infoContainer}>
+              <View style={styles.infoRow}>
+                <Text style={styles.label}>Nome:</Text>
+                <Text style={styles.value}>Isaac Daniel Silva Uliam</Text>
+              </View>
+              <View style={styles.infoRow}>
+                <Text style={styles.label}>Idade:</Text>
+                <Text style={styles.value}>17 anos</Text>
+              </View>
+              <View style={styles.infoRow}>
+                <Text style={styles.label}>Cidade:</Text>
+                <Text style={styles.value}>Presidente Venceslau</Text>
+              </View>
+              <View style={styles.infoRow}>
+                <Text style={styles.label}>Profissão:</Text>
+                <Text style={styles.value}>Estudante</Text>
+              </View>
+            </View>
 
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Editar Perfil</Text>
-        </TouchableOpacity>
-
-        <View style={styles.footer}>
-          <Text style={styles.footerText}>© 2025 Meu Perfil. Todos os direitos reservados.</Text>
-        </View>
-
-        <StatusBar style="auto" />
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.buttonText}>Editar Perfil</Text>
+            </TouchableOpacity>
+            <StatusBar style="auto" />
+          </View>
+        </ScrollView>
       </View>
-    </ScrollView>
+    </ImageBackground>
   );
 }
 
@@ -47,22 +46,42 @@ const styles = StyleSheet.create({
   scrollContainer: {
     paddingBottom: 40,
   },
-  
+
+  overlay: {
+    flex: 1,
+    backgroundColor: "rgba(255,255,255,0.8)",
+  },
+
+  bg: {
+    flex: 1,
+    resizeMode: "cover",
+  },
+
   container: {
     flex: 1,
-    backgroundColor: "#f5f5f8",
+    paddingTop: 0,
+    paddingBottom: 40,
     alignItems: "center",
     justifyContent: "flex-start",
+    width: "100%",
+    maxWidth: Platform.OS === 'web' ? 900 : "100%",
   },
 
   titulo: {
-    fontSize: 34,
+    fontSize: Platform.OS === 'web' ? 60 : 34,
     fontWeight: 'bold',
-    color: '#8B0000',
+    color: '#fff',
+    backgroundColor: '#8B0000',
     textAlign: 'center',
+    width: '100%',
+    alignSelf: 'stretch',
     marginBottom: 20,
-    marginTop: 40,
+    paddingTop: 40,
+    paddingBottom: 30,
     letterSpacing: 1.5,
+    borderRadius: 0,
+    borderBottomWidth: 4,
+    borderBottomColor: '#333',
   },
 
   img: {
@@ -127,20 +146,5 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontWeight: '600',
     textAlign: 'center',
-  },
-
-  footer: {
-    marginTop: 40,
-    paddingVertical: 20,
-    width: "100%",
-    borderTopWidth: 1,
-    borderTopColor: "#ddd",
-    alignItems: "center",
-  },
-
-  footerText: {
-    color: "#777",
-    fontSize: 14,
-    textAlign: "center",
   },
 });

@@ -14,7 +14,6 @@ export default function App() {
           <View style={styles.container}>
             <Text style={styles.titulo}>Revolução Francesa</Text>
 
-            <View style={styles.linha} />
 
             <Text style={styles.textos}>
               A Revolução Francesa foi um dos acontecimentos mais marcantes da
@@ -78,22 +77,17 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    width: "100%",
-    maxWidth: Platform.OS === "web" ? 900 : "100%",
+    paddingTop: 0,
+    paddingBottom: 40,
     alignItems: "center",
-    paddingTop: 40,
+    justifyContent: "flex-start",
+    width: "100%",
+    maxWidth: Platform.OS === 'web' ? 900 : "100%",
   },
 
   bg: {
     flex: 1,
     resizeMode: "cover",
-  },
-
-  linha: {
-    width: "100%",
-    height: Platform.OS === "web" ? 6 : 4,
-    backgroundColor: "#333",
-    marginBottom: 20,
   },
 
   imagem: {
@@ -129,11 +123,19 @@ const styles = StyleSheet.create({
 
   titulo: {
     fontSize: Platform.OS === 'web' ? 60 : 34,
-    fontWeight: "bold",
-    color: "#8B0000",
-    textAlign: "center",
+    fontWeight: 'bold',
+    color: '#fff',
+    backgroundColor: '#8B0000',
+    textAlign: 'center',
+    width: '100%',
+    alignSelf: 'stretch',
     marginBottom: 20,
+    paddingTop: 40,
+    paddingBottom: 30,
     letterSpacing: 1.5,
+    borderRadius: 0,
+    borderBottomWidth: 4,
+    borderBottomColor: '#333',
   },
 
   bold: {

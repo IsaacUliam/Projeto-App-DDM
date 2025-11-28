@@ -8,50 +8,45 @@ export default function App() {
   return (
     <ImageBackground source={bg} style={styles.bg}>
       <View style={styles.overlay}>
-    <ScrollView contentContainerStyle={styles.scrollContainer}>
-      <View style={styles.container}>
-        <Text style={styles.titulo}>Revolução e Inovação</Text>
-        <View style={styles.linha}/>
-        <Image source={logo} style={styles.img} />
-        
-        <Text style={styles.textos}>
-          Nas ruas de Paris, o fogo da revolta acendeu ideias que ecoariam por séculos. Enquanto
-          multidões lutavam por liberdade, em oficinas e laboratórios uma nova chama surgia —
-          discreta, mas capaz de mudar o rumo do progresso.
-        </Text>
+        <ScrollView contentContainerStyle={styles.scrollContainer}>
+          <View style={styles.container}>
+            <Text style={styles.titulo}>Revolução e Inovação</Text>
+            <Image source={logo} style={styles.img} />
 
-        <View style={styles.cardsContainer}>
-          <View style={styles.card}>
-            <Text style={styles.cardTitle}>Liberdade</Text>
-            <Text style={styles.cardText}>
-              A busca pela liberdade moldou sociedades, derrubando estruturas antigas e abrindo caminho para novas ideias.
+            <Text style={styles.textos}>
+              Nas ruas de Paris, o fogo da revolta acendeu ideias que ecoariam por séculos. Enquanto
+              multidões lutavam por liberdade, em oficinas e laboratórios uma nova chama surgia —
+              discreta, mas capaz de mudar o rumo do progresso.
             </Text>
+
+            <View style={styles.cardsContainer}>
+              <View style={styles.card}>
+                <Text style={styles.cardTitle}>Liberdade</Text>
+                <Text style={styles.cardText}>
+                  A busca pela liberdade moldou sociedades, derrubando estruturas antigas e abrindo caminho para novas ideias.
+                </Text>
+              </View>
+
+              <View style={styles.card}>
+                <Text style={styles.cardTitle}>Tecnologia</Text>
+                <Text style={styles.cardText}>
+                  Inovações surgiam silenciosas em laboratórios, mudando o ritmo do mundo e conectando pessoas.
+                </Text>
+              </View>
+
+              <View style={styles.card}>
+                <Text style={styles.cardTitle}>Progresso</Text>
+                <Text style={styles.cardText}>
+                  A combinação de coragem e conhecimento impulsionou o crescimento das nações e da humanidade.
+                </Text>
+              </View>
+            </View>
+
+            <StatusBar style="auto" />
           </View>
-
-          <View style={styles.card}>
-            <Text style={styles.cardTitle}>Tecnologia</Text>
-            <Text style={styles.cardText}>
-              Inovações surgiam silenciosas em laboratórios, mudando o ritmo do mundo e conectando pessoas.
-            </Text>
-          </View>
-
-          <View style={styles.card}>
-            <Text style={styles.cardTitle}>Progresso</Text>
-            <Text style={styles.cardText}>
-              A combinação de coragem e conhecimento impulsionou o crescimento das nações e da humanidade.
-            </Text>
-          </View>
-        </View>
-
-        <View style={styles.footer}>
-          <Text style={styles.footerText}>© 2025 Revolução e Inovação. Todos os direitos reservados.</Text>
-        </View>
-
-        <StatusBar style="auto" />
+        </ScrollView>
       </View>
-    </ScrollView>
-</View>
-</ImageBackground>
+    </ImageBackground>
   );
 }
 
@@ -60,7 +55,7 @@ const styles = StyleSheet.create({
     paddingBottom: 40,
     alignItems: Platform.OS === 'web' ? 'center' : 'stretch',
   },
-  
+
   overlay: {
     flex: 1,
     backgroundColor: "rgba(255,255,255,0.8)",
@@ -73,30 +68,30 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    paddingVertical: 40,
+    paddingTop: 0,
+    paddingBottom: 40,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     width: "100%",
     maxWidth: Platform.OS === 'web' ? 900 : "100%",
   },
 
-  linha: {
-    width: '100%',
-    height: Platform.OS === 'web' ? 6 : 4,
-    backgroundColor: '#333',
-    marginTop: 5,
-    marginBottom: 20,
-    alignSelf: 'center',
-},
 
   titulo: {
     fontSize: Platform.OS === 'web' ? 60 : 34,
     fontWeight: 'bold',
-    color: '#8B0000',
+    color: '#fff',
+    backgroundColor: '#8B0000',
     textAlign: 'center',
+    width: '100%',
+    alignSelf: 'stretch',
     marginBottom: 20,
-    marginTop: 40,
+    paddingTop: 40,
+    paddingBottom: 30,
     letterSpacing: 1.5,
+    borderRadius: 0,
+    borderBottomWidth: 4,
+    borderBottomColor: '#333',
   },
 
   img: {
@@ -113,7 +108,7 @@ const styles = StyleSheet.create({
   },
 
   textos: {
-    width: "95%",
+    width: "90%",
     fontSize: Platform.OS === 'web' ? 20 : 17,
     lineHeight: Platform.OS === 'web' ? 30 : 26,
     color: "#333",
@@ -179,20 +174,5 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontWeight: '600',
     textAlign: 'center',
-  },
-
-  footer: {
-    marginTop: 40,
-    paddingVertical: 20,
-    width: "100%",
-    borderTopWidth: 1,
-    borderTopColor: "#ddd",
-    alignItems: "center",
-  },
-
-  footerText: {
-    color: "#777",
-    fontSize: Platform.OS === 'web' ? 16 : 14,
-    textAlign: "center",
   },
 });
