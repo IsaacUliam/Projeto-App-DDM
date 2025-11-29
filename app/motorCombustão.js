@@ -2,8 +2,8 @@ import { StatusBar } from "expo-status-bar";
 import { Image, ScrollView, StyleSheet, Text, View, Pressable, ImageBackground, Platform } from "react-native";
 import { useRouter } from 'expo-router';
 import logo from "../assets/motorLogopng.png";
-import motor2T from "../assets/motor-2T-img.png";
-import motor4T from "../assets/motor-4T-img.png";
+import motor2T from "../assets/motor-2T-img1.png";
+import motor4T from "../assets/motor-4T-img1.png";
 import bg from "../assets/background.png";
 
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
   return (
     <ImageBackground source={bg} style={styles.bg}>
       <View style={styles.overlay}>
-        <ScrollView>
+        <ScrollView contentContainerStyle={styles.scrollContent}> 
           <Text style={styles.titulo}>Motores a Combustão Interna</Text>
 
           <View style={styles.container}>
@@ -52,10 +52,14 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  scrollContent: {
+    alignItems: 'center',
+    minHeight: '100%',
+    paddingBottom: 40,
+  },
+
   container: {
     flex: 1,
-    paddingTop: 0,
-    paddingBottom: 40,
     alignItems: "center",
     justifyContent: "flex-start",
     width: "100%",
@@ -64,12 +68,13 @@ const styles = StyleSheet.create({
 
   bg: {
     flex: 1,
-    resizeMode: "cover",
+    width: "100%",
+    height: "100%",
   },
 
   overlay: {
     flex: 1,
-    backgroundColor: "rgba(255,255,255,0.8)",
+    backgroundColor: "rgba(255,255,255,0.85)",
   },
 
   titulo: {
@@ -79,89 +84,91 @@ const styles = StyleSheet.create({
     backgroundColor: '#8B0000',
     textAlign: 'center',
     width: '100%',
-    alignSelf: 'stretch',
     marginBottom: 20,
     paddingTop: 40,
     paddingBottom: 30,
     letterSpacing: 1.5,
-    borderRadius: 0,
     borderBottomWidth: 4,
     borderBottomColor: '#333',
   },
 
   imgLogo: {
-    width: 180,
-    height: 180,
+    width: Platform.OS === 'web' ? 220 : 180,
+    height: Platform.OS === 'web' ? 220 : 180,
     alignSelf: 'center',
     marginBottom: 22,
-    borderRadius: 100,
+    borderRadius: '100%',
     borderWidth: 4,
-    borderColor: '#333333',
+    borderColor: '#333',
     resizeMode: 'contain',
   },
 
   textoIntro: {
     width: Platform.OS === "web" ? "85%" : "90%",
-    fontSize: 16,
-    lineHeight: 24,
-    color: '#333333',
-    backgroundColor: '#FFFFFF',
-    borderRadius: 12,
+    fontSize: Platform.OS === "web" ? 22 : 16,
+    lineHeight: Platform.OS === "web" ? 30 : 24,
+    color: '#333',
+    backgroundColor: '#FFF',
     padding: 15,
     borderLeftWidth: 5,
     borderLeftColor: '#8B0000',
-    elevation: 3,
     marginBottom: 25,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.12,
-    shadowRadius: 3,
     textAlign: 'justify',
-    borderRadius: 10,
-    boxShadow: "0px 10px 14px #444",
+    elevation: 3,
+    shadowColor: Platform.OS === 'web' ? undefined : '#000',
+    shadowOffset: Platform.OS === 'web' ? undefined : { width: 0, height: 2 },
+    shadowOpacity: Platform.OS === 'web' ? undefined : 0.12,
+    shadowRadius: Platform.OS === 'web' ? undefined : 3,
+    ...(Platform.OS === 'web' && {
+      boxShadow: "0px 4px 12px rgba(0,0,0,0.25)",
+    }),
 
+    borderRadius: 12,
   },
 
   subtitulo: {
-    fontSize: 20,
+    fontSize: Platform.OS === "web" ? 30 : 18,
     fontWeight: 'bold',
     color: '#8B0000',
-    marginBottom: 15,
-    paddingBottom: 5,
-    textAlign: 'center',
+    marginTop: 15,
+    marginBottom: 5,
+    paddingBottom: 3,
   },
 
   card: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#FFF',
     padding: 16,
-    borderRadius: 12,
-    marginBottom: 20,
+    borderRadius: 16,
+    marginBottom: 25,
+    alignItems: 'center',
+    width: Platform.OS === 'web' ? 600 : "85%",
+    height: Platform.OS === 'web' ? 380 : 250,
     borderWidth: 4,
-    borderColor: '#8b0000',
+    borderColor: '#8B0000',
     elevation: 4,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 3 },
-    shadowOpacity: 0.12,
-    shadowRadius: 4,
+    shadowColor: Platform.OS === 'web' ? undefined : '#000',
+    shadowOffset: Platform.OS === 'web' ? undefined : { width: 0, height: 3 },
+    shadowOpacity: Platform.OS === 'web' ? undefined : 0.12,
+    shadowRadius: Platform.OS === 'web' ? undefined : 4,
+    ...(Platform.OS === 'web' && {
+      boxShadow: "0px 6px 14px rgba(0,0,0,0.22)",
+    }),
   },
 
   cardTitulo: {
-    fontSize: 18,
+    fontSize: 24,
     fontWeight: 'bold',
-    color: '#2B2B2B',
+    color: '#8B0000',
     marginBottom: 12,
     textAlign: 'center',
-    color: '#8b0000',
-    fontWeight: 'bold',
   },
 
   cardImg: {
-    width: '70%',
-    height: 180,
-    aspectRatio: 1.6,
+    width: Platform.OS === 'web' ? 400 : '80%',
+    height: Platform.OS === 'web' ? 300 : 180,
     borderRadius: 12,
     resizeMode: 'contain',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#FFF',
   },
 
 });

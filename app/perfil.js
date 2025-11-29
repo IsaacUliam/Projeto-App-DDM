@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { Image, ScrollView, StyleSheet, Text, View, TouchableOpacity, ImageBackground, Platform } from "react-native";
 import foto from "../assets/logo-real.png";
-import bg from "../assets/background.png"; 
+import bg from "../assets/background.png";
 
 export default function App() {
   return (
@@ -30,10 +30,6 @@ export default function App() {
                 <Text style={styles.value}>Estudante</Text>
               </View>
             </View>
-
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.buttonText}>Editar Perfil</Text>
-            </TouchableOpacity>
             <StatusBar style="auto" />
           </View>
         </ScrollView>
@@ -44,6 +40,8 @@ export default function App() {
 
 const styles = StyleSheet.create({
   scrollContainer: {
+    alignItems: 'center',
+    minHeight: '100%',
     paddingBottom: 40,
   },
 
@@ -69,12 +67,12 @@ const styles = StyleSheet.create({
 
   titulo: {
     fontSize: Platform.OS === 'web' ? 60 : 34,
+    width: Platform.OS === 'web' ? '200%' : '100%',
     fontWeight: 'bold',
     color: '#fff',
     backgroundColor: '#8B0000',
     textAlign: 'center',
-    width: '100%',
-    alignSelf: 'stretch',
+    alignSelf: 'center',
     marginBottom: 20,
     paddingTop: 40,
     paddingBottom: 30,
@@ -90,7 +88,7 @@ const styles = StyleSheet.create({
     marginBottom: 25,
     borderRadius: 110,
     borderWidth: 4,
-    borderColor: '#8B0000',
+    borderColor: '#333',
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 6 },
     shadowOpacity: 0.25,
@@ -117,14 +115,14 @@ const styles = StyleSheet.create({
   },
 
   label: {
-    fontSize: 18,
+    fontSize: 22,
     fontWeight: 'bold',
     color: '#8B0000',
-    width: 100,
+    width: 130,
   },
 
   value: {
-    fontSize: 18,
+    fontSize: 20,
     color: '#333',
     flexShrink: 1,
   },

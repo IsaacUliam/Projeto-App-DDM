@@ -155,8 +155,8 @@ const styles = StyleSheet.create({
     color: '#fff',
     backgroundColor: '#8B0000',
     textAlign: 'center',
-    width: '100%',
-    alignSelf: 'stretch',
+    width: Platform.OS === 'web' ? '200%' : '100%',
+    alignSelf: 'center',
     marginBottom: 20,
     paddingTop: 40,
     paddingBottom: 30,
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
 
   texto: {
     width: Platform.OS === "web" ? "85%" : "90%",
-    fontSize: Platform.OS === "web" ? 20 : 16,
+    fontSize: Platform.OS === "web" ? 22 : 16,
     lineHeight: Platform.OS === "web" ? 30 : 24,
     textAlign: 'justify',
     marginBottom: 25,
@@ -201,8 +201,8 @@ const styles = StyleSheet.create({
   },
 
   imgPequena: {
-    width: Platform.OS === "web" ? "85%" : 300,
-    height: Platform.OS === "web" ? 280 : 240,
+    width: Platform.OS === "web" ? "60%" : 300,
+    height: Platform.OS === "web" ? 340 : 240,
     alignSelf: 'center',
     marginTop: 15,
     borderRadius: 8,
@@ -216,8 +216,8 @@ const styles = StyleSheet.create({
   },
 
   imgPequena2: {
-    width: Platform.OS === "web" ? "85%" : 300,
-    height: Platform.OS === "web" ? 260 : 180,
+    width: Platform.OS === "web" ? "100%" : 300,
+    height: Platform.OS === "web" ? 380 : 180,
     alignSelf: 'center',
     marginTop: 15,
     borderRadius: 8,
@@ -231,8 +231,8 @@ const styles = StyleSheet.create({
   },
 
   imgGif: {
-    width: Platform.OS === "web" ? "90%" : '100%',
-    height: Platform.OS === "web" ? 240 : 160,
+    width: Platform.OS === "web" ? "100%" : '100%',
+    height: Platform.OS === "web" ? 380 : 160,
     alignSelf: 'center',
     borderRadius: 8,
     borderWidth: 2,
@@ -261,14 +261,14 @@ const styles = StyleSheet.create({
   },
 
   textoBloco: {
-    fontSize: Platform.OS === "web" ? 18 : 16,
+    fontSize: Platform.OS === "web" ? 20 : 16,
     lineHeight: Platform.OS === "web" ? 28 : 24,
     color: '#333333',
     textAlign: 'justify',
   },
 
   botao: {
-    width: Platform.OS === "web" ? "85%" : 300,
+    width: Platform.OS === "web" ? 600 : 300,
     paddingVertical: Platform.OS === "web" ? 16 : 12,
     backgroundColor: '#DCDCDC',
     borderRadius: 8,
@@ -303,7 +303,7 @@ const styles = StyleSheet.create({
   },
 
   duasImagens: {
-    flexDirection: 'row',
+    flexDirection: Platform.OS === "web" ? 'column' : 'row',
     justifyContent: 'space-around',
     flexWrap: 'wrap',
     marginTop: 15,
@@ -312,9 +312,9 @@ const styles = StyleSheet.create({
   },
 
   imagens: {
-    width: Platform.OS === "web" ? "45%" : '48%',
+    width: Platform.OS === "web" ? "100%" : '48%',
     minWidth: 140,
-    height: Platform.OS === "web" ? 200 : 120,
+    height: Platform.OS === "web" ? 330 : 120,
     resizeMode: 'cover',
     alignSelf: 'center',
     borderRadius: 8,

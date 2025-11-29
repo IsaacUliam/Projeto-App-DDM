@@ -83,8 +83,8 @@ const styles = StyleSheet.create({
     color: '#fff',
     backgroundColor: '#8B0000',
     textAlign: 'center',
-    width: '100%',
-    alignSelf: 'stretch',
+    width: Platform.OS === 'web' ? '200%' : '100%',
+    alignSelf: 'center',
     marginBottom: 20,
     paddingTop: 40,
     paddingBottom: 30,
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
 
   textos: {
     width: "90%",
-    fontSize: Platform.OS === 'web' ? 20 : 17,
+    fontSize: Platform.OS === 'web' ? 22 : 17,
     lineHeight: Platform.OS === 'web' ? 30 : 26,
     color: "#333",
     backgroundColor: "#fff",
