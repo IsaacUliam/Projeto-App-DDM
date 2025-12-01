@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     backgroundColor: '#8B0000',
     textAlign: 'center',
-    width: Platform.OS === 'web' ? '200%' : '100%',
+    width: Platform.OS === 'web' ? '500%' : '100%',
     alignSelf: 'center',
     marginBottom: 20,
     paddingTop: 40,

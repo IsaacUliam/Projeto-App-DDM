@@ -1,4 +1,4 @@
-import { View, Text, Pressable, Image, ScrollView, ImageBackground, StyleSheet, StatusBar } from 'react-native';
+import { View, Text, Pressable, Image, ScrollView, ImageBackground, StyleSheet, StatusBar, Platform, } from 'react-native';
 import { useRouter,  } from 'expo-router';
 import motor01 from "../assets/motor2t01.png";
 import motorTempo1 from "../assets/motores_2_tempos_p1.png";
@@ -12,14 +12,14 @@ export default function Motor2T() {
   return (
     <ImageBackground source={bg} style={styles.bg}>
       <View style={styles.overlay}>
-        <View style={styles.container}>
-          <View style={styles.header}>
-            <Pressable onPress={() => router.back()}>
-              <Text style={styles.voltar}>Voltar</Text>
-            </Pressable>
-          </View>
+        <ScrollView contentContainerStyle={styles.scrollContainer}>
+          <View style={styles.container}>
+            <View style={styles.header}>
+              <Pressable onPress={() => router.back()}>
+                <Text style={styles.voltar}>Voltar</Text>
+              </Pressable>
+            </View>
 
-          <ScrollView contentContainerStyle={styles.scroll}>
             <Text style={styles.titulo}>Motor 2 Tempos</Text>
             <View style={styles.linha} />
 
@@ -86,8 +86,8 @@ export default function Motor2T() {
             </View>
 
             <StatusBar style="auto" />
-          </ScrollView>
-        </View>
+          </View>
+        </ScrollView>
       </View>
     </ImageBackground>
   );
@@ -95,12 +95,25 @@ export default function Motor2T() {
 
 const styles = StyleSheet.create({
 
+  scrollContainer: {
+    paddingBottom: 40,
+    alignItems: Platform.OS === 'web' ? 'center' : 'stretch',
+  },
+
   container: {
     flex: 1,
+    paddingTop: 0,
+    paddingBottom: 40,
+    alignItems: "center",
+    justifyContent: "flex-start",
+    width: "100%",
+    maxWidth: Platform.OS === 'web' ? 900 : "100%",
   },
 
   header: {
     padding: 20,
+    width: "100%",
+    alignItems: "flex-start",
   },
 
   overlay: {
@@ -138,6 +151,8 @@ const styles = StyleSheet.create({
   scroll: {
     paddingHorizontal: 20,
     paddingBottom: 60,
+    width: "100%",
+    alignItems: "center",
   },
 
   titulo: {
@@ -148,6 +163,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginTop: 10,
     letterSpacing: 1.5,
+    width: "95%",
   },
 
   texto: {
@@ -156,6 +172,7 @@ const styles = StyleSheet.create({
     lineHeight: 22,
     marginBottom: 10,
     marginTop: 10,
+    width: "95%",
   },
 
   texto2: {
@@ -165,6 +182,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginTop: 20,
     textAlign: 'justify',
+    width: "95%",
   },
 
   subtitulo: {
@@ -174,6 +192,7 @@ const styles = StyleSheet.create({
     marginTop: 25,
     marginBottom: 20,
     textAlign: 'center',
+    width: "95%",
   },
 
   subtitulo2: {
@@ -181,6 +200,7 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     color: "#333",
     marginVertical: 10,
+    width: "95%",
   },
 
   subtitulo3: {
@@ -201,6 +221,7 @@ const styles = StyleSheet.create({
     borderColor: "#333",
     borderRadius: 10,
     boxShadow: "0px 10px 14px #444",
+    width: "95%",
   },
 
   lista: {
@@ -234,7 +255,7 @@ const styles = StyleSheet.create({
   },
 
   gif: {
-    width: "100%",
+    width: "90%",
     height: 330,
     resizeMode: "contain",
     marginBottom: 20,

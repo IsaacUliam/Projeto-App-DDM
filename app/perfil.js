@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
 
   titulo: {
     fontSize: Platform.OS === 'web' ? 60 : 34,
-    width: Platform.OS === 'web' ? '200%' : '100%',
+    width: Platform.OS === 'web' ? '500%' : '100%',
     fontWeight: 'bold',
     color: '#fff',
     backgroundColor: '#8B0000',
