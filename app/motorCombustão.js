@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     height: Platform.OS === 'web' ? 220 : 180,
     alignSelf: 'center',
     marginBottom: 22,
-    borderRadius: 100,
+    borderRadius: 200,
     borderWidth: 4,
     borderColor: '#333',
     resizeMode: 'contain',
