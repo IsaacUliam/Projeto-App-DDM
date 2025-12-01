@@ -1,5 +1,5 @@
 import { View, Text, Pressable, Image, ScrollView, ImageBackground, StyleSheet, StatusBar, Platform, } from 'react-native';
-import { useRouter,  } from 'expo-router';
+import { useRouter, } from 'expo-router';
 import motor01 from "../assets/motor2t01.png";
 import motorTempo1 from "../assets/motores_2_tempos_p1.png";
 import motorTempo2 from "../assets/motores_2_tempos_p2.png";
@@ -12,13 +12,14 @@ export default function Motor2T() {
   return (
     <ImageBackground source={bg} style={styles.bg}>
       <View style={styles.overlay}>
+        <View style={styles.header}>
+          <Pressable onPress={() => router.back()}>
+            <Text style={styles.voltar}>Voltar</Text>
+          </Pressable>
+        </View>
         <ScrollView contentContainerStyle={styles.scrollContainer}>
           <View style={styles.container}>
-            <View style={styles.header}>
-              <Pressable onPress={() => router.back()}>
-                <Text style={styles.voltar}>Voltar</Text>
-              </Pressable>
-            </View>
+
 
             <Text style={styles.titulo}>Motor 2 Tempos</Text>
             <View style={styles.linha} />
@@ -112,7 +113,8 @@ const styles = StyleSheet.create({
 
   header: {
     padding: 20,
-    width: "100%",
+    marginLeft: Platform.OS === 'web' ? 300 : 0,
+    width: Platform.OS === 'web' ? "220%" : "100%",
     alignItems: "flex-start",
   },
 
@@ -127,7 +129,7 @@ const styles = StyleSheet.create({
   },
 
   linha: {
-    width: '200%',
+    width: '500%',
     height: 3,
     backgroundColor: '#333',
     marginTop: 5,
@@ -136,57 +138,53 @@ const styles = StyleSheet.create({
   },
 
   voltar: {
-    fontSize: 20,
     color: '#fff',
-    fontWeight: '600',
-    paddingVertical: 4,
-    paddingHorizontal: 10,
+    fontWeight: 'bold',
     backgroundColor: '#8b0000',
-    borderRadius: 6,
-    marginRight: 230,
-    marginTop: 10,
+    borderRadius: 8,
     textAlign: 'center',
-  },
-
-  scroll: {
-    paddingHorizontal: 20,
-    paddingBottom: 60,
-    width: "100%",
-    alignItems: "center",
+    fontSize: Platform.OS === 'web' ? 28 : 20,
+    paddingVertical: Platform.OS === 'web' ? 12 : 6,
+    paddingHorizontal: Platform.OS === 'web' ? 32 : 14,
+    alignSelf: Platform.OS === 'web' ? 'flex-start' : 'auto',
+    marginTop: Platform.OS === 'web' ? 20 : 10,
+    marginLeft: Platform.OS === 'web' ? 40 : 0,
+    marginRight: Platform.OS === 'web' ? 200 : 0,
   },
 
   titulo: {
-    fontSize: 34,
+    fontSize: Platform.OS === 'web' ? 60 : 34,
     fontWeight: 'bold',
-    color: '#8B0000',
+    color: '#8b0000',
     textAlign: 'center',
-    marginBottom: 20,
-    marginTop: 10,
+    width: Platform.OS === 'web' ? '500%' : '100%',
+    paddingBottom: 30,
     letterSpacing: 1.5,
-    width: "95%",
   },
 
   texto: {
-    fontSize: 16,
+    fontSize: Platform.OS === 'web' ? 22 : 16,
     color: "#444",
     lineHeight: 22,
-    marginBottom: 10,
-    marginTop: 10,
+    marginBottom: Platform.OS === 'web' ? 25 : 10,
+    marginTop: Platform.OS === 'web' ? 25 : 10,
     width: "95%",
+    textAlign: Platform.OS === 'web' ? 'center' : 'justify',
   },
 
   texto2: {
-    fontSize: 18,
+    fontSize: Platform.OS === 'web' ? 24 : 18,
     color: "#000",
     lineHeight: 24,
     marginBottom: 20,
     marginTop: 20,
-    textAlign: 'justify',
+    letterSpacing: Platform.OS === 'web' ? 1.5 : 0,
+    textAlign: Platform.OS === 'web' ? 'center' : 'justify',
     width: "95%",
   },
 
   subtitulo: {
-    fontSize: 22,
+    fontSize: Platform.OS === 'web' ? 30 : 22,
     fontWeight: "bold",
     color: "#8b0000",
     marginTop: 25,
@@ -196,25 +194,27 @@ const styles = StyleSheet.create({
   },
 
   subtitulo2: {
-    fontSize: 18,
+    fontSize: Platform.OS === 'web' ? 30 : 18,
     fontWeight: "600",
     color: "#333",
     marginVertical: 10,
     width: "95%",
+    textAlign: Platform.OS === 'web' ? 'center' : 'left',
   },
 
   subtitulo3: {
-    fontSize: 22,
+    fontSize: Platform.OS === 'web' ? 28 : 22,
     fontWeight: "bold",
     color: "#8b0000",
     marginTop: 25,
     marginBottom: 20,
+    marginLeft: Platform.OS === 'web' ? 15 : 0,
     textAlign: 'left',
   },
 
   bloco: {
     backgroundColor: "#fff",
-    padding: 15,
+    padding: Platform.OS === 'web' ? 5 : 15,
     borderRadius: 10,
     marginVertical: 15,
     elevation: 2,
@@ -225,14 +225,16 @@ const styles = StyleSheet.create({
   },
 
   lista: {
-    fontSize: 16,
+    fontSize: Platform.OS === 'web' ? 20 : 16,
     color: "#444",
     marginBottom: 5,
+    marginLeft: Platform.OS === 'web' ? 15 : 0,
+    textAlign: 'left',
   },
 
   img: {
-    width: "80%",
-    height: 256,
+    width: Platform.OS === 'web' ? '60%' : "80%",
+    height: Platform.OS === 'web' ? 470 : 256,
     resizeMode: "cover",
     marginRight: "10%",
     marginLeft: "10%",
@@ -244,23 +246,23 @@ const styles = StyleSheet.create({
   },
 
   img2: {
-    width: "80%",
-    height: 230,
+    width: Platform.OS === 'web' ? '50%' : '80%',
+    height: Platform.OS === 'web' ? 430 : 240,
     resizeMode: "cover",
-    marginVertical: 10,
     borderRadius: 8,
-    borderWidth: 2,
+    margin: Platform.OS === 'web' ? 40 : 15,
+    borderWidth: Platform.OS === 'web' ? 4 : 2,
     borderColor: '#A9A9A9',
     alignSelf: 'center',
   },
 
   gif: {
-    width: "90%",
-    height: 330,
+    width: Platform.OS === 'web' ? 500 : '90%',
+    height: Platform.OS === 'web' ? 522 : 330,
     resizeMode: "contain",
     marginBottom: 20,
     borderRadius: 8,
-    borderWidth: 3,
+    borderWidth: Platform.OS === 'web' ? 5 : 3,
     borderColor: "#333",
     borderRadius: 10,
     boxShadow: "0px 10px 14px #444",

@@ -1,4 +1,4 @@
-import { View, Text, Pressable, Image, ScrollView, StyleSheet, StatusBar, ImageBackground } from 'react-native';
+import { View, Text, Pressable, Image, ScrollView, StyleSheet, StatusBar, ImageBackground, Platform } from 'react-native';
 import { useRouter } from 'expo-router';
 import motor01 from "../assets/motor4t01.png";
 import motorV2 from "../assets/motor-V2-4-tempos.gif";
@@ -19,11 +19,11 @@ export default function Motor4T() {
       <View style={styles.overlay}>
         <View style={styles.container}>
           <View style={styles.header}>
-            <Pressable onPress={() => router.back()} style={styles.voltar}>
-              <Text style={styles.voltarTexto}>Voltar</Text>
+            <Pressable onPress={() => router.back()}>
+              <Text style={styles.voltar}>Voltar</Text>
             </Pressable>
           </View>
-          <ScrollView contentContainerStyle={styles.scrollContent}>
+          <ScrollView contentContainerStyle={styles.scrollContainer}>
 
 
             <Text style={styles.titulo}>Motor 4 Tempos</Text>
@@ -142,11 +142,20 @@ export default function Motor4T() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-  },
+  flex: 1,
+  paddingTop: 0,
+  alignItems: Platform.OS === 'web' ? "center" : "center",
+  justifyContent: "flex-start",
+  width: "100%",
+  maxWidth: Platform.OS === 'web' ? 900 : "100%",
+  alignSelf: Platform.OS === 'web' ? 'center' : 'auto',
+},
 
-  scrollContent: {
-    padding: 20,
+
+  scrollContainer: {
+    alignItems: 'center',
+    minHeight: '100%',
+    paddingBottom: 40,
   },
 
   overlay: {
@@ -161,11 +170,13 @@ const styles = StyleSheet.create({
 
   header: {
     padding: 20,
-    paddingBottom: 0,
+    marginLeft: Platform.OS === 'web' ? 300 : 0,
+    width: Platform.OS === 'web' ? "220%" : "100%",
+    alignItems: "flex-start",
   },
 
   linha: {
-    width: '200%',
+    width: '500%',
     height: 3,
     backgroundColor: '#333',
     marginTop: 5,
@@ -173,26 +184,28 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
 
-  voltarTexto: {
-    fontSize: 20,
+  voltar: {
     color: '#fff',
-    fontWeight: '600',
-    paddingVertical: 4,
-    paddingHorizontal: 10,
+    fontWeight: 'bold',
     backgroundColor: '#8b0000',
-    borderRadius: 6,
-    marginRight: 230,
-    marginTop: 10,
+    borderRadius: 8,
     textAlign: 'center',
+    fontSize: Platform.OS === 'web' ? 28 : 20,
+    paddingVertical: Platform.OS === 'web' ? 12 : 6,
+    paddingHorizontal: Platform.OS === 'web' ? 32 : 14,
+    alignSelf: Platform.OS === 'web' ? 'flex-start' : 'auto',
+    marginTop: Platform.OS === 'web' ? 20 : 10,
+    marginLeft: Platform.OS === 'web' ? 40 : 0,
+    marginRight: Platform.OS === 'web' ? 200 : 0,
   },
 
   titulo: {
-    fontSize: 34,
+    fontSize: Platform.OS === 'web' ? 60 : 34,
     fontWeight: 'bold',
-    color: '#8B0000',
+    color: '#8b0000',
     textAlign: 'center',
-    marginBottom: 20,
-    marginTop: 10,
+    width: Platform.OS === 'web' ? '500%' : '100%',
+    paddingBottom: 30,
     letterSpacing: 1.5,
   },
 
@@ -236,7 +249,7 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     marginBottom: 20,
     marginTop: 20,
-    textAlign: 'justify',
+    textAlign: Platform.OS === 'web' ? 'center' : 'justify',
   },
 
   lista: {
@@ -271,8 +284,8 @@ const styles = StyleSheet.create({
   },
 
   img2: {
-    width: "80%",
-    height: 400,
+    width: Platform.OS === 'web' ? 300 : 300,
+    height: Platform.OS === 'web' ? 620 :  520,
     resizeMode: "cover",
     marginVertical: 10,
     borderRadius: 8,

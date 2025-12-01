@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     backgroundColor: '#8B0000',
     textAlign: 'center',
-    width: '100%',
+    width: Platform.OS === 'web' ? '500%' : '100%',
     marginBottom: 20,
     paddingTop: 40,
     paddingBottom: 30,
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     height: Platform.OS === 'web' ? 220 : 180,
     alignSelf: 'center',
     marginBottom: 22,
-    borderRadius: '100%',
+    borderRadius: 100,
     borderWidth: 4,
     borderColor: '#333',
     resizeMode: 'contain',
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
   },
 
   cardImg: {
-    width: Platform.OS === 'web' ? 400 : '80%',
+    width: Platform.OS === 'web' ? 400 : 300,
     height: Platform.OS === 'web' ? 300 : 180,
     borderRadius: 12,
     resizeMode: 'contain',
