@@ -34,7 +34,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="motorCombustão"
+        name="motorCombustao"
         options={{
           title: 'Combustão',
           tabBarIcon: ({ color }) => (

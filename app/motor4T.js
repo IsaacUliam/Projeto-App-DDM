@@ -18,7 +18,7 @@ export default function Motor4T() {
     <ImageBackground source={bg} style={styles.bg}>
       <View style={styles.overlay}>
         <View style={styles.header}>
-          <Pressable onPress={() => router.back()}>
+          <Pressable onPress={() => {router.replace("/motorCombustao")}}>
             <Text style={styles.voltar}>Voltar</Text>
           </Pressable>
         </View>
