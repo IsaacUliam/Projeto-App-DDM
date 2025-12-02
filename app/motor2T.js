@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
     borderColor: "#333",
     borderRadius: 10,
     boxShadow: "0px 10px 14px #444",
-    width: "95%",
+    width: "90%",
   },
 
   lista: {

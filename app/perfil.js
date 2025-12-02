@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { Image, ScrollView, StyleSheet, Text, View, TouchableOpacity, ImageBackground, Platform } from "react-native";
-import foto from "../assets/logo-real.png";
+import foto from "../assets/perfil.jpeg";
 import bg from "../assets/background.png";
 
 export default function App() {
@@ -29,6 +29,11 @@ export default function App() {
                 <Text style={styles.label}>Profissão:</Text>
                 <Text style={styles.value}>Estudante</Text>
               </View>
+            </View>
+
+            <View style={styles.sobre_container}>
+              <Text style={styles.subtitulo_sobre}>Sobre</Text>
+              <Text style={styles.texto}>{Platform.OS === 'web' ? '  Este aplicativo foi criado com a ideia de unir dois mundos que, à primeira vista, parecem totalmente diferentes: a Revolução Francesa, um dos eventos históricos mais importantes da humanidade, e os motores a combustão, uma das bases da tecnologia moderna.\n  Aqui, o usuário pode aprender sobre como o espírito de mudança, inovação e ruptura da Revolução Francesa se conecta, simbolicamente, ao avanço dos motores e à evolução das máquinas que transformaram o mundo.' : 'Este app combina dois temas diferentes: Revolução Francesa e motores a combustão. A ideia é aprender história e tecnologia de um jeito simples e rápido, com conteúdo claro e direto.'}</Text>
             </View>
             <StatusBar style="auto" />
           </View>
@@ -82,12 +87,42 @@ const styles = StyleSheet.create({
     borderBottomColor: '#333',
   },
 
+  texto: {
+    fontSize: Platform.OS === 'web' ? 22 : 18,
+    lineHeight: Platform.OS === 'web' ? 35 : 25,
+    letterSpacing: Platform.OS === 'web' ? 1.0 : 0.5,
+    padding: 20,
+  },
+
+  subtitulo_sobre: {
+    textAlign: 'center',
+    fontSize: Platform.OS === 'web' ? 30 : 22,
+    color: '#fff',
+    fontWeight: '600',
+    padding: 10,
+    backgroundColor: '#8b0000',
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+  },
+
+  sobre_container:{
+    width: "90%",
+    backgroundColor: "#fff",
+    borderRadius: 15,
+    marginBottom: 30,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 5,
+  },
+
   img: {
     width: 220,
     height: 220,
     marginBottom: 25,
     borderRadius: 110,
-    borderWidth: 4,
+    borderWidth: Platform.OS === 'web' ? 6 : 4,
     borderColor: '#333',
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 6 },
